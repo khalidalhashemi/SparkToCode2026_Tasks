@@ -396,36 +396,99 @@
 
             // Task 13: Triangle Type Classifier
 
-            Console.WriteLine("Enter first length of the triangle: ");
-            float side1 = float.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter first length of the triangle: ");
+            //float side1 = float.Parse(Console.ReadLine());
 
-            Console.WriteLine("Enter second length of the triangle: ");
-            float side2 = float.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter second length of the triangle: ");
+            //float side2 = float.Parse(Console.ReadLine());
 
-            Console.WriteLine("Enter third length of the triangle: ");
-            float side3 = float.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter third length of the triangle: ");
+            //float side3 = float.Parse(Console.ReadLine());
 
-            if (side1 + side2 > side3 || side1 + side3 > side2 || side2 + side3 > side1)
+            //if (side1 + side2 > side3 || side1 + side3 > side2 || side2 + side3 > side1)
+            //{
+            //    if (side1 == side2 && side2 == side3)
+            //    {
+            //        Console.WriteLine("The triangle is Equilateral.");
+            //    }
+            //    else if (side1 == side2 || side1 == side3 || side2 == side3)
+            //    {
+            //        Console.WriteLine("The triangle is Isosceles.");
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("The triangle is Scalene.");
+            //    }
+            //    Console.WriteLine("This is a valid triangle.");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Stop there.");
+            //}
+
+            //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            ///
+
+
+            // Task 14: Online Store Checkout
+
+            float HeadPhonesPrice = 8.500f;
+            float KeyBoardPrice = 12.000f;
+            float MousePrice = 5.000f;
+            float Tax = 5f;
+
+            float totalPrice = 0;
+
+            float Discount = 10f;
+
+            Console.WriteLine("Enter a product code to purchase: ");
+            Console.WriteLine("1. HeadPhones: 8.500 OMR.");
+            Console.WriteLine("2. KeyBoard: 12.000 OMR.");
+            Console.WriteLine("3. Mouse: 5.000 OMR.");
+            int productCode = int.Parse(Console.ReadLine());
+
+            switch (productCode)
             {
-                if (side1 == side2 && side2 == side3)
-                {
-                    Console.WriteLine("The triangle is Equilateral.");
-                }
-                else if (side1 == side2 || side1 == side3 || side2 == side3)
-                {
-                    Console.WriteLine("The triangle is Isosceles.");
-                }
-                else
-                {
-                    Console.WriteLine("The triangle is Scalene.");
-                }
-                Console.WriteLine("This is a valid triangle.");
+                case 1:
+                    Console.WriteLine("You select HeadPhones, Price: " + HeadPhonesPrice + " OMR.");
+                    break;
+
+                case 2:
+                    Console.WriteLine("You select KeyBoard, Price: " + KeyBoardPrice + " OMR.");
+                    break;
+
+                case 3:
+                    Console.WriteLine("You select Mouse, Price: " + MousePrice + " OMR.");
+                    break;
+
+                default:
+                    Console.WriteLine("Invalid product code!");
+                    break;
+            }
+
+            Console.WriteLine("Enter the quantity: ");
+            int quantity = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Do you have discount coupon? (yes/no)");
+            string hasCoupon = Console.ReadLine();
+            bool ValidCoupon = hasCoupon.ToLower() == "yes";
+
+            totalPrice = productCode switch
+            {
+                1 => HeadPhonesPrice * quantity,
+                2 => KeyBoardPrice * quantity,
+                3 => MousePrice * quantity,
+                _ => 0
+            };
+
+            if (totalPrice > 20 && ValidCoupon)
+            {
+                Console.WriteLine("Discount Applied! Your total price with discount and Tax: " + (totalPrice * (1 - Discount / 100)) + Tax + " OMR.");
             }
             else
             {
-                Console.WriteLine("Stop there.");
+                Console.WriteLine("Discount not Applide! Your total price with Tax and without discount: " + (totalPrice * (1 + Tax / 100)) + " OMR.");
             }
-
 
 
 
