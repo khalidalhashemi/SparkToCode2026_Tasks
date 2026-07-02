@@ -84,42 +84,67 @@
 
             // Task 5: Grade Letter Lookup
 
-            Console.WriteLine("Enter the number corresponding to your grade: ");
-            Console.WriteLine("1. A");
-            Console.WriteLine("2. B");
-            Console.WriteLine("3. C");
-            Console.WriteLine("4. D");
-            Console.WriteLine("5. F");
+            //Console.WriteLine("Enter the number corresponding to your grade: ");
+            //Console.WriteLine("1. A");
+            //Console.WriteLine("2. B");
+            //Console.WriteLine("3. C");
+            //Console.WriteLine("4. D");
+            //Console.WriteLine("5. F");
 
-            int grade = int.Parse(Console.ReadLine());
+            //int grade = int.Parse(Console.ReadLine());
 
-            switch (grade)
+            //switch (grade)
+            //{
+            //    case 1:
+            //        Console.WriteLine("Your grade is A = Exellent.");
+            //        break;
+
+            //    case 2:
+            //        Console.WriteLine("Your grade is B = Very Good.");
+            //        break;
+
+            //    case 3:
+            //        Console.WriteLine("Your grade is C = Good.");
+            //        break;
+
+            //    case 4:
+            //        Console.WriteLine("Your grade is D = Pass.");
+            //        break;
+
+            //    case 5:
+            //        Console.WriteLine("Your grade is F = Fail.");
+            //        break;
+
+            //    default:
+            //        Console.WriteLine("Invalid grade!");
+            //        break;
+            //}
+
+            //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            ///
+
+
+            // Task 6: Temperature Converter
+
+            Console.WriteLine("Enter the temperature in Celsius: ");
+            float Celsius = float.Parse(Console.ReadLine());
+
+            if (Celsius < 10)
             {
-                case 1:
-                    Console.WriteLine("Your grade is A = Exellent.");
-                    break;
-
-                case 2:
-                    Console.WriteLine("Your grade is B = Very Good.");
-                    break;
-
-                case 3:
-                    Console.WriteLine("Your grade is C = Good.");
-                    break;
-
-                case 4:
-                    Console.WriteLine("Your grade is D = Pass.");
-                    break;
-
-                case 5:
-                    Console.WriteLine("Your grade is F = Fail.");
-                    break;
-
-                default:
-                    Console.WriteLine("Invalid grade!");
-                    break;
+                Console.WriteLine("The weather is Cold.");
+            }
+            else if (Celsius >= 10 && Celsius < 30)
+            {
+                Console.WriteLine("The weather is Mild.");
+            }
+            else
+            {
+                Console.WriteLine("The weather is Hot.");
             }
 
+            float Fahrenheit = (Celsius * 9 / 5) + 32;
+
+            Console.WriteLine("Temperature in Fahrenheit: " + Fahrenheit);
 
 
 
