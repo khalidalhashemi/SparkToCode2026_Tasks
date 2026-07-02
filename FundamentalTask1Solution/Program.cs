@@ -174,28 +174,81 @@
 
             // Task 8: Resturant Bill with Mimbership Discount
 
-            Console.Write("Enter the total bill amount: ");
-            float totalBill = float.Parse(Console.ReadLine());
+            //Console.Write("Enter the total bill amount: ");
+            //float totalBill = float.Parse(Console.ReadLine());
 
-            Console.Write("Do you have a Loyality Membership (yes/no): ");
-            string hasMembership = Console.ReadLine();
+            //Console.Write("Do you have a Loyality Membership (yes/no): ");
+            //string hasMembership = Console.ReadLine();
 
-            bool ValidMembership = hasMembership.ToLower() == "yes";
+            //bool ValidMembership = hasMembership.ToLower() == "yes";
 
-            float Discount = 15;
+            //float Discount = 15;
 
-            float FinalBill;
+            //float FinalBill;
 
-            if (ValidMembership && totalBill > 20)
+            //if (ValidMembership && totalBill > 20)
+            //{
+            //    Discount = totalBill * (Discount / 100);
+            //    FinalBill = totalBill - Discount;
+            //    Console.WriteLine("Disscount Applied! Your Bill is: " + FinalBill + " OMR");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Discount not Applied. Your Bill is: " + totalBill + " OMR");
+            //}
+
+            //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            ///
+
+
+            // Task 9: Day Name Finder
+
+            Console.WriteLine("Enter a day number from 1 to 7 to defined the day name: ");
+            Console.WriteLine("1. Sunday ");
+            Console.WriteLine("2. Monday ");
+            Console.WriteLine("3. Tuesday ");
+            Console.WriteLine("4. Wednesday ");
+            Console.WriteLine("5. Thursday ");
+            Console.WriteLine("6. Friday ");
+            Console.WriteLine("7. Saturday ");
+
+            int dayNumber = int.Parse(Console.ReadLine());
+
+            switch (dayNumber)
             {
-                Discount = totalBill * (Discount / 100);
-                FinalBill = totalBill - Discount;
-                Console.WriteLine("Disscount Applied! Your Bill is: " + FinalBill + " OMR");
+                case 1:
+                    Console.WriteLine("The day is Sunday.");
+                    break;
+
+                case 2:
+                    Console.WriteLine("The day is Monday.");
+                    break;
+
+                case 3:
+                    Console.WriteLine("The day is Tuesday.");
+                    break;
+
+                case 4:
+                    Console.WriteLine("The day is Wednesday.");
+                    break;
+
+                case 5:
+                    Console.WriteLine("The day is Thursday.");
+                    break;
+
+                case 6:
+                    Console.WriteLine("The day is Friday.");
+                    break;
+
+                case 7:
+                    Console.WriteLine("The day is Saturday.");
+                    break;
+
+                default:
+                    Console.WriteLine("Invalid day number!");
+                    break;
             }
-            else
-            {
-                Console.WriteLine("Discount not Applied. Your Bill is: " + totalBill + " OMR");
-            }
+
 
 
         }
