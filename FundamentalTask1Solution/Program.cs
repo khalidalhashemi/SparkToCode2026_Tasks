@@ -61,22 +61,65 @@
 
             // Task 4: Voting Eligibility
 
-            Console.WriteLine("Enter your age to check voting eligibility: ");
-            int age = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter your age to check voting eligibility: ");
+            //int age = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Do you have a valid national ID? (yes/no)");
-            string hasId = Console.ReadLine();
+            //Console.WriteLine("Do you have a valid national ID? (yes/no)");
+            //string hasId = Console.ReadLine();
 
-            bool ValidID = hasId.ToLower() == "yes";
+            //bool ValidID = hasId.ToLower() == "yes";
 
-            if (age >= 18 && ValidID)
+            //if (age >= 18 && ValidID)
+            //{
+            //    Console.WriteLine("You are eligible to vote.");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("You are not eligible to vote.");
+            //}
+
+            //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            ///
+
+
+            // Task 5: Grade Letter Lookup
+
+            Console.WriteLine("Enter the number corresponding to your grade: ");
+            Console.WriteLine("1. A");
+            Console.WriteLine("2. B");
+            Console.WriteLine("3. C");
+            Console.WriteLine("4. D");
+            Console.WriteLine("5. F");
+
+            int grade = int.Parse(Console.ReadLine());
+
+            switch (grade)
             {
-                Console.WriteLine("You are eligible to vote.");
+                case 1:
+                    Console.WriteLine("Your grade is A = Exellent.");
+                    break;
+
+                case 2:
+                    Console.WriteLine("Your grade is B = Very Good.");
+                    break;
+
+                case 3:
+                    Console.WriteLine("Your grade is C = Good.");
+                    break;
+
+                case 4:
+                    Console.WriteLine("Your grade is D = Pass.");
+                    break;
+
+                case 5:
+                    Console.WriteLine("Your grade is F = Fail.");
+                    break;
+
+                default:
+                    Console.WriteLine("Invalid grade!");
+                    break;
             }
-            else
-            {
-                Console.WriteLine("You are not eligible to vote.");
-            }
+
 
 
 
