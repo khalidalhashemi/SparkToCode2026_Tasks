@@ -313,35 +313,83 @@
 
             // Task 11:  Loan Eligibility System
 
-            Console.WriteLine("Enter your age to check loan eligibility: ");
-            int age = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter your age to check loan eligibility: ");
+            //int age = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Enter your monthly income: ");
-            float income = float.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter your monthly income: ");
+            //float income = float.Parse(Console.ReadLine());
 
-            Console.WriteLine("Do you have any existing loans? (yes/no)");
-            string hasExistingLoans = Console.ReadLine();
+            //Console.WriteLine("Do you have any existing loans? (yes/no)");
+            //string hasExistingLoans = Console.ReadLine();
 
-            bool hasLoans = hasExistingLoans.ToLower() == "no";
+            //bool hasLoans = hasExistingLoans.ToLower() == "no";
 
-            if (hasLoans)
+            //if (hasLoans)
+            //{
+            //    if (age >= 21 && age <= 60 && income >= 400)
+            //    {
+            //        Console.WriteLine("You are eligable.");
+            //        Console.WriteLine("You meet the required conditions.");
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("You are not eligable.");
+            //        Console.WriteLine("You did not meet the required conditions.");
+            //    }
+            //}
+            //else
+            //{
+            //    Console.WriteLine("You are not eligable.");
+            //    Console.WriteLine("You did not meet the required conditions.");
+            //}
+
+            //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            ///
+
+
+            // Task 12: Shipping Cost Calculator
+
+            Console.WriteLine("Enter the weight of the package (in kg): ");
+            float weight = float.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter the region code: ");
+            Console.WriteLine("A. Local");
+            Console.WriteLine("B. National");
+            Console.WriteLine("C. International");
+            string regionCode = Console.ReadLine();
+
+            if (weight > 5 && weight <= 10)
             {
-                if (age >= 21 && age <= 60 && income >= 400)
-                {
-                    Console.WriteLine("You are eligable.");
-                    Console.WriteLine("You meet the required conditions.");
-                }
-                else
-                {
-                    Console.WriteLine("You are not eligable.");
-                    Console.WriteLine("You did not meet the required conditions.");
-                }
+                Console.WriteLine("You have an extra weight" + (weight + 1.000));
+            }
+            else if (weight > 10)
+            {
+                Console.WriteLine("You have an extra weight" + (weight + 5.000));
             }
             else
             {
-                Console.WriteLine("You are not eligable.");
-                Console.WriteLine("You did not meet the required conditions.");
+                Console.WriteLine("No extra charge.");
             }
+
+            switch (regionCode)
+            {
+                case "A":
+                    Console.WriteLine("Shipping cost for Local region: " + (weight + 1.000));
+                    break;
+
+                case "B":
+                    Console.WriteLine("Shipping cost for National region: " + (weight + 3.000));
+                    break;
+
+                case "C":
+                    Console.WriteLine("Shipping cost for International region: " + (weight + 7.000));
+                    break;
+
+                default:
+                    Console.WriteLine("Invalid region code!");
+                    break;
+            }
+
 
 
 
