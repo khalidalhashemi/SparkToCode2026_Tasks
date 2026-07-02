@@ -25,17 +25,36 @@
 
             // Task 2: Rectangle Calculator
 
-            Console.Write("Enter the length of the rectangle: ");
-            float length = float.Parse(Console.ReadLine());
+            //Console.Write("Enter the length of the rectangle: ");
+            //float length = float.Parse(Console.ReadLine());
 
-            Console.Write("Enter the width of the rectangle: ");
-            float width = float.Parse(Console.ReadLine());
+            //Console.Write("Enter the width of the rectangle: ");
+            //float width = float.Parse(Console.ReadLine());
 
-            float Area = length * width;
-            float Perimeter = 2 * (length + width);
+            //float Area = length * width;
+            //float Perimeter = 2 * (length + width);
 
-            Console.WriteLine("Area of the rectangle: " + Area);
-            Console.WriteLine("Perimeter of the rectangle: " + Perimeter);
+            //Console.WriteLine("Area of the rectangle: " + Area);
+            //Console.WriteLine("Perimeter of the rectangle: " + Perimeter);
+
+            //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            ///
+
+
+            // Task 3: Even or Odd Checker
+
+            Console.Write("Enter a number to check if it's even or odd: ");
+            int number = int.Parse(Console.ReadLine());
+
+            if (number % 2 == 0)
+            {
+                Console.WriteLine(number + " is even number.");
+            }
+            else
+            {
+                Console.WriteLine(number + " is odd number.");
+            }
+
 
         }
     }
