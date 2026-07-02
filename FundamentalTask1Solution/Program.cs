@@ -349,46 +349,83 @@
 
             // Task 12: Shipping Cost Calculator
 
-            Console.WriteLine("Enter the weight of the package (in kg): ");
-            float weight = float.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter the weight of the package (in kg): ");
+            //float weight = float.Parse(Console.ReadLine());
 
-            Console.WriteLine("Enter the region code: ");
-            Console.WriteLine("A. Local");
-            Console.WriteLine("B. National");
-            Console.WriteLine("C. International");
-            string regionCode = Console.ReadLine();
+            //Console.WriteLine("Enter the region code: ");
+            //Console.WriteLine("A. Local");
+            //Console.WriteLine("B. National");
+            //Console.WriteLine("C. International");
+            //string regionCode = Console.ReadLine();
 
-            if (weight > 5 && weight <= 10)
+            //if (weight > 5 && weight <= 10)
+            //{
+            //    Console.WriteLine("You have an extra weight" + (weight + 1.000));
+            //}
+            //else if (weight > 10)
+            //{
+            //    Console.WriteLine("You have an extra weight" + (weight + 5.000));
+            //}
+            //else
+            //{
+            //    Console.WriteLine("No extra charge.");
+            //}
+
+            //switch (regionCode)
+            //{
+            //    case "A":
+            //        Console.WriteLine("Shipping cost for Local region: " + (weight + 1.000));
+            //        break;
+
+            //    case "B":
+            //        Console.WriteLine("Shipping cost for National region: " + (weight + 3.000));
+            //        break;
+
+            //    case "C":
+            //        Console.WriteLine("Shipping cost for International region: " + (weight + 7.000));
+            //        break;
+
+            //    default:
+            //        Console.WriteLine("Invalid region code!");
+            //        break;
+            //}
+
+            //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            ///
+
+
+            // Task 13: Triangle Type Classifier
+
+            Console.WriteLine("Enter first length of the triangle: ");
+            float side1 = float.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter second length of the triangle: ");
+            float side2 = float.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter third length of the triangle: ");
+            float side3 = float.Parse(Console.ReadLine());
+
+            if (side1 + side2 > side3 || side1 + side3 > side2 || side2 + side3 > side1)
             {
-                Console.WriteLine("You have an extra weight" + (weight + 1.000));
-            }
-            else if (weight > 10)
-            {
-                Console.WriteLine("You have an extra weight" + (weight + 5.000));
+                if (side1 == side2 && side2 == side3)
+                {
+                    Console.WriteLine("The triangle is Equilateral.");
+                }
+                else if (side1 == side2 || side1 == side3 || side2 == side3)
+                {
+                    Console.WriteLine("The triangle is Isosceles.");
+                }
+                else
+                {
+                    Console.WriteLine("The triangle is Scalene.");
+                }
+                Console.WriteLine("This is a valid triangle.");
             }
             else
             {
-                Console.WriteLine("No extra charge.");
+                Console.WriteLine("Stop there.");
             }
 
-            switch (regionCode)
-            {
-                case "A":
-                    Console.WriteLine("Shipping cost for Local region: " + (weight + 1.000));
-                    break;
-
-                case "B":
-                    Console.WriteLine("Shipping cost for National region: " + (weight + 3.000));
-                    break;
-
-                case "C":
-                    Console.WriteLine("Shipping cost for International region: " + (weight + 7.000));
-                    break;
-
-                default:
-                    Console.WriteLine("Invalid region code!");
-                    break;
-            }
 
 
 
