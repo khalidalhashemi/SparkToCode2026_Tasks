@@ -203,52 +203,109 @@
 
             // Task 9: Day Name Finder
 
-            Console.WriteLine("Enter a day number from 1 to 7 to defined the day name: ");
-            Console.WriteLine("1. Sunday ");
-            Console.WriteLine("2. Monday ");
-            Console.WriteLine("3. Tuesday ");
-            Console.WriteLine("4. Wednesday ");
-            Console.WriteLine("5. Thursday ");
-            Console.WriteLine("6. Friday ");
-            Console.WriteLine("7. Saturday ");
+            //Console.WriteLine("Enter a day number from 1 to 7 to defined the day name: ");
+            //Console.WriteLine("1. Sunday ");
+            //Console.WriteLine("2. Monday ");
+            //Console.WriteLine("3. Tuesday ");
+            //Console.WriteLine("4. Wednesday ");
+            //Console.WriteLine("5. Thursday ");
+            //Console.WriteLine("6. Friday ");
+            //Console.WriteLine("7. Saturday ");
 
-            int dayNumber = int.Parse(Console.ReadLine());
+            //int dayNumber = int.Parse(Console.ReadLine());
 
-            switch (dayNumber)
+            //switch (dayNumber)
+            //{
+            //    case 1:
+            //        Console.WriteLine("The day is Sunday.");
+            //        break;
+
+            //    case 2:
+            //        Console.WriteLine("The day is Monday.");
+            //        break;
+
+            //    case 3:
+            //        Console.WriteLine("The day is Tuesday.");
+            //        break;
+
+            //    case 4:
+            //        Console.WriteLine("The day is Wednesday.");
+            //        break;
+
+            //    case 5:
+            //        Console.WriteLine("The day is Thursday.");
+            //        break;
+
+            //    case 6:
+            //        Console.WriteLine("The day is Friday.");
+            //        break;
+
+            //    case 7:
+            //        Console.WriteLine("The day is Saturday.");
+            //        break;
+
+            //    default:
+            //        Console.WriteLine("Invalid day number!");
+            //        break;
+            //}
+
+            //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            ///
+
+
+            // Task 10: Mini Calculator
+
+            Console.WriteLine("Enter the first number: ");
+            float num1 = float.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter the second number: ");
+            float num2 = float.Parse(Console.ReadLine());
+
+
+            Console.WriteLine("Choose an operation: ");
+            Console.WriteLine("1. Addition (+)");
+            Console.WriteLine("2. Subtraction (-)");
+            Console.WriteLine("3. Multiplication (*)");
+            Console.WriteLine("4. Division (/)");
+            Console.WriteLine("5. Remainder (%)");
+
+            string operation = Console.ReadLine();
+
+            switch (operation)
             {
-                case 1:
-                    Console.WriteLine("The day is Sunday.");
+                case "+":
+                    Console.WriteLine("Your Add: " + (num1 + num2));
                     break;
 
-                case 2:
-                    Console.WriteLine("The day is Monday.");
+                case "-":
+                    Console.WriteLine("Your Sub: " + (num1 - num2));
                     break;
 
-                case 3:
-                    Console.WriteLine("The day is Tuesday.");
+                case "*":
+                    Console.WriteLine("Your Mul: " + (num1 * num2));
                     break;
 
-                case 4:
-                    Console.WriteLine("The day is Wednesday.");
+                case "%":
+                    Console.WriteLine("Your Rem: " + (num1 % num2));
                     break;
 
-                case 5:
-                    Console.WriteLine("The day is Thursday.");
-                    break;
-
-                case 6:
-                    Console.WriteLine("The day is Friday.");
-                    break;
-
-                case 7:
-                    Console.WriteLine("The day is Saturday.");
+                case "/":
+                    if (num2 == 0)
+                    {
+                        Console.WriteLine("Error! ");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Your Sub: " + (num1 / num2));
+                    }
                     break;
 
                 default:
-                    Console.WriteLine("Invalid day number!");
+                    Console.WriteLine("Invalid operation!");
                     break;
-            }
 
+
+            }
 
 
         }
