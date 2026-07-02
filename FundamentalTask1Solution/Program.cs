@@ -255,57 +255,94 @@
 
             // Task 10: Mini Calculator
 
-            Console.WriteLine("Enter the first number: ");
-            float num1 = float.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter the first number: ");
+            //float num1 = float.Parse(Console.ReadLine());
 
-            Console.WriteLine("Enter the second number: ");
-            float num2 = float.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter the second number: ");
+            //float num2 = float.Parse(Console.ReadLine());
 
 
-            Console.WriteLine("Choose an operation: ");
-            Console.WriteLine("1. Addition (+)");
-            Console.WriteLine("2. Subtraction (-)");
-            Console.WriteLine("3. Multiplication (*)");
-            Console.WriteLine("4. Division (/)");
-            Console.WriteLine("5. Remainder (%)");
+            //Console.WriteLine("Choose an operation: ");
+            //Console.WriteLine("1. Addition (+)");
+            //Console.WriteLine("2. Subtraction (-)");
+            //Console.WriteLine("3. Multiplication (*)");
+            //Console.WriteLine("4. Division (/)");
+            //Console.WriteLine("5. Remainder (%)");
 
-            string operation = Console.ReadLine();
+            //string operation = Console.ReadLine();
 
-            switch (operation)
+            //switch (operation)
+            //{
+            //    case "+":
+            //        Console.WriteLine("Your Add: " + (num1 + num2));
+            //        break;
+
+            //    case "-":
+            //        Console.WriteLine("Your Sub: " + (num1 - num2));
+            //        break;
+
+            //    case "*":
+            //        Console.WriteLine("Your Mul: " + (num1 * num2));
+            //        break;
+
+            //    case "%":
+            //        Console.WriteLine("Your Rem: " + (num1 % num2));
+            //        break;
+
+            //    case "/":
+            //        if (num2 == 0)
+            //        {
+            //            Console.WriteLine("Error! ");
+            //        }
+            //        else
+            //        {
+            //            Console.WriteLine("Your Sub: " + (num1 / num2));
+            //        }
+            //        break;
+
+            //    default:
+            //        Console.WriteLine("Invalid operation!");
+            //        break;
+
+
+            //}
+
+            //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            ///
+
+
+            // Task 11:  Loan Eligibility System
+
+            Console.WriteLine("Enter your age to check loan eligibility: ");
+            int age = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter your monthly income: ");
+            float income = float.Parse(Console.ReadLine());
+
+            Console.WriteLine("Do you have any existing loans? (yes/no)");
+            string hasExistingLoans = Console.ReadLine();
+
+            bool hasLoans = hasExistingLoans.ToLower() == "no";
+
+            if (hasLoans)
             {
-                case "+":
-                    Console.WriteLine("Your Add: " + (num1 + num2));
-                    break;
-
-                case "-":
-                    Console.WriteLine("Your Sub: " + (num1 - num2));
-                    break;
-
-                case "*":
-                    Console.WriteLine("Your Mul: " + (num1 * num2));
-                    break;
-
-                case "%":
-                    Console.WriteLine("Your Rem: " + (num1 % num2));
-                    break;
-
-                case "/":
-                    if (num2 == 0)
-                    {
-                        Console.WriteLine("Error! ");
-                    }
-                    else
-                    {
-                        Console.WriteLine("Your Sub: " + (num1 / num2));
-                    }
-                    break;
-
-                default:
-                    Console.WriteLine("Invalid operation!");
-                    break;
-
-
+                if (age >= 21 && age <= 60 && income >= 400)
+                {
+                    Console.WriteLine("You are eligable.");
+                    Console.WriteLine("You meet the required conditions.");
+                }
+                else
+                {
+                    Console.WriteLine("You are not eligable.");
+                    Console.WriteLine("You did not meet the required conditions.");
+                }
             }
+            else
+            {
+                Console.WriteLine("You are not eligable.");
+                Console.WriteLine("You did not meet the required conditions.");
+            }
+
 
 
         }
