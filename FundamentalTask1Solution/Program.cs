@@ -126,25 +126,47 @@
 
             // Task 6: Temperature Converter
 
-            Console.WriteLine("Enter the temperature in Celsius: ");
-            float Celsius = float.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter the temperature in Celsius: ");
+            //float Celsius = float.Parse(Console.ReadLine());
 
-            if (Celsius < 10)
+            //if (Celsius < 10)
+            //{
+            //    Console.WriteLine("The weather is Cold.");
+            //}
+            //else if (Celsius >= 10 && Celsius < 30)
+            //{
+            //    Console.WriteLine("The weather is Mild.");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("The weather is Hot.");
+            //}
+
+            //float Fahrenheit = (Celsius * 9 / 5) + 32;
+
+            //Console.WriteLine("Temperature in Fahrenheit: " + Fahrenheit);
+
+            //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            ///
+
+
+            // Task 7: Movie Ticket Pricing
+
+            Console.WriteLine("Enter your age to check movie ticket pricing: ");
+            int age = int.Parse(Console.ReadLine());
+
+            if (age >= 0 && age <= 12)
             {
-                Console.WriteLine("The weather is Cold.");
+                Console.WriteLine("You are Children, and your ticket price = 2.000 OMR.");
             }
-            else if (Celsius >= 10 && Celsius < 30)
+            else if (age >= 13 && age <= 59)
             {
-                Console.WriteLine("The weather is Mild.");
+                Console.WriteLine("You are Adults, and your ticket price = 5.000 OMR.");
             }
             else
             {
-                Console.WriteLine("The weather is Hot.");
+                Console.WriteLine("You are Senior, and your ticket price = 3.000 OMR.");
             }
-
-            float Fahrenheit = (Celsius * 9 / 5) + 32;
-
-            Console.WriteLine("Temperature in Fahrenheit: " + Fahrenheit);
 
 
 
