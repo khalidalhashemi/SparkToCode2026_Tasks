@@ -152,22 +152,50 @@
 
             // Task 7: Movie Ticket Pricing
 
-            Console.WriteLine("Enter your age to check movie ticket pricing: ");
-            int age = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter your age to check movie ticket pricing: ");
+            //int age = int.Parse(Console.ReadLine());
 
-            if (age >= 0 && age <= 12)
+            //if (age >= 0 && age <= 12)
+            //{
+            //    Console.WriteLine("You are Children, and your ticket price = 2.000 OMR.");
+            //}
+            //else if (age >= 13 && age <= 59)
+            //{
+            //    Console.WriteLine("You are Adults, and your ticket price = 5.000 OMR.");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("You are Senior, and your ticket price = 3.000 OMR.");
+            //}
+
+            //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            ///
+
+
+            // Task 8: Resturant Bill with Mimbership Discount
+
+            Console.Write("Enter the total bill amount: ");
+            float totalBill = float.Parse(Console.ReadLine());
+
+            Console.Write("Do you have a Loyality Membership (yes/no): ");
+            string hasMembership = Console.ReadLine();
+
+            bool ValidMembership = hasMembership.ToLower() == "yes";
+
+            float Discount = 15;
+
+            float FinalBill;
+
+            if (ValidMembership && totalBill > 20)
             {
-                Console.WriteLine("You are Children, and your ticket price = 2.000 OMR.");
-            }
-            else if (age >= 13 && age <= 59)
-            {
-                Console.WriteLine("You are Adults, and your ticket price = 5.000 OMR.");
+                Discount = totalBill * (Discount / 100);
+                FinalBill = totalBill - Discount;
+                Console.WriteLine("Disscount Applied! Your Bill is: " + FinalBill + " OMR");
             }
             else
             {
-                Console.WriteLine("You are Senior, and your ticket price = 3.000 OMR.");
+                Console.WriteLine("Discount not Applied. Your Bill is: " + totalBill + " OMR");
             }
-
 
 
         }
