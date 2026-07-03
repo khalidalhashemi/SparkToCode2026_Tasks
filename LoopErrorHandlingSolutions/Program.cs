@@ -30,18 +30,43 @@ namespace LoopErrorHandlingSolutions
 
             // Task 2: Sum of Numbers 1 to N
 
-            int n = 1;
-            int sum = 0;
+            //int n = 1;
+            //int sum = 0;
 
-            Console.WriteLine("Enter a positive whole number: ");
-            n = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter a positive whole number: ");
+            //n = int.Parse(Console.ReadLine());
 
-            for (int i = 1; i <= n; i++)
+            //for (int i = 1; i <= n; i++)
+            //{
+            //    sum = sum + i;
+            //}
+
+            //Console.WriteLine("The sum from 1 to " + n + " is " + sum);
+
+            ////////////////////////////////////////////////////////////////////////////////////////
+            ///
+
+
+            // Task 3: Multiplication Table
+
+            int number;
+            int mul = 0;
+
+            Console.WriteLine("Enter a number to start multiply: ");
+            number = int.Parse(Console.ReadLine());
+
+            for (int i = 1; i <= number; i++)
             {
-                sum = sum + i;
-            }
+                mul = number * i;
 
-            Console.WriteLine("The sum from 1 to " + n + " is " + sum);
+                Console.WriteLine("Your results: " + i + " * " + number + " = " + mul);
+            }
+            
+
+
+
+
+
         }
     }
 }
