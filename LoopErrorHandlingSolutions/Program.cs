@@ -1,4 +1,5 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
 using System.Diagnostics.Metrics;
 
 namespace LoopErrorHandlingSolutions
@@ -49,19 +50,45 @@ namespace LoopErrorHandlingSolutions
 
             // Task 3: Multiplication Table
 
-            int number;
-            int mul = 0;
+            //int number;
+            //int mul = 0;
 
-            Console.WriteLine("Enter a number to start multiply: ");
-            number = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter a number to start multiply: ");
+            //number = int.Parse(Console.ReadLine());
 
-            for (int i = 1; i <= number; i++)
+            //for (int i = 1; i <= number; i++)
+            //{
+            //    mul = number * i;
+
+            //    Console.WriteLine("Your results: " + i + " * " + number + " = " + mul);
+            //}
+
+            ////////////////////////////////////////////////////////////////////////////////////////
+            ///
+
+
+            // Task 4: Passwoed Retry
+
+            bool exitDecision = false;
+            string correctPass = "Spark2026";
+            string Pass = correctPass;
+
+            while (exitDecision == false)
             {
-                mul = number * i;
+                Console.WriteLine("Enter the password: ");
+                Pass = Console.ReadLine();
 
-                Console.WriteLine("Your results: " + i + " * " + number + " = " + mul);
+                if (Pass != correctPass)
+                {
+                    Console.WriteLine("Invalid Password, please try again.");
+                }
+                else
+                {
+                    exitDecision = true;
+                    Console.WriteLine("Access Granted.");
+                    break;
+                }
             }
-            
 
 
 
