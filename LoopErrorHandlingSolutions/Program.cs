@@ -69,30 +69,59 @@ namespace LoopErrorHandlingSolutions
 
             // Task 4: Passwoed Retry
 
+            //bool exitDecision = false;
+            //string correctPass = "Spark2026";
+            //string Pass = correctPass;
+
+            //while (exitDecision == false)
+            //{
+            //    Console.WriteLine("Enter the password: ");
+            //    Pass = Console.ReadLine();
+
+            //    if (Pass != correctPass)
+            //    {
+            //        Console.WriteLine("Invalid Password, please try again.");
+            //    }
+            //    else
+            //    {
+            //        exitDecision = true;
+            //        Console.WriteLine("Access Granted.");
+            //        break;
+            //    }
+            //}
+
+            ////////////////////////////////////////////////////////////////////////////////////////
+            ///
+
+
+            // Task 5: Number Guessing Game
+
             bool exitDecision = false;
-            string correctPass = "Spark2026";
-            string Pass = correctPass;
+            int FixedNumber = 15;
+            int Number;
 
-            while (exitDecision == false)
+            do
             {
-                Console.WriteLine("Enter the password: ");
-                Pass = Console.ReadLine();
+                Console.WriteLine("Enter a random number to start guessing: ");
+                Number = int.Parse(Console.ReadLine());
 
-                if (Pass != correctPass)
+                if (Number > FixedNumber)
                 {
-                    Console.WriteLine("Invalid Password, please try again.");
-                }
-                else
-                {
+                    Console.WriteLine("Too high.");
                     exitDecision = true;
-                    Console.WriteLine("Access Granted.");
-                    break;
+                }
+                else if (Number < FixedNumber)
+                {
+                    Console.WriteLine("Too low.");
+                    exitDecision = true;
+                }
+                else if (Number == FixedNumber)
+                {
+                    Console.WriteLine("Correct.");
+                    exitDecision = false;
                 }
             }
-
-
-
-
+            while (exitDecision);
 
         }
     }
