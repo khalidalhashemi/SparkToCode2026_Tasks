@@ -130,44 +130,85 @@ namespace LoopErrorHandlingSolutions
 
             // Task 6: Safe Division Calculator
 
-            float num1;
-            float num2;
-            float result;
-            float Divition;
+            //float num1;
+            //float num2;
+            //float result;
+            //float Divition;
+            //bool exitDecision = false;
+
+            //do
+            //{
+            //    Console.WriteLine("Enter the first number: ");
+            //    num1 = float.Parse(Console.ReadLine());
+
+            //    Console.WriteLine("Enter the second number to be divide: ");
+            //    num2 = float.Parse(Console.ReadLine());
+
+            //    try
+            //    {
+            //        Divition = num1 / num2;
+
+            //        if (num2 == 0)
+            //        {
+            //            Console.WriteLine("Error! " + num1 + " cannot be divided by zero.");
+            //            exitDecision = true;
+            //        }
+            //        else
+            //        {
+            //            Divition = num1 / num2;
+            //            Console.WriteLine("The resulte is: " + Divition);
+            //            exitDecision = true;
+            //        }
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        Console.WriteLine(ex.Message);
+            //    }
+
+
+            //}
+            //while (exitDecision);
+
+            ////////////////////////////////////////////////////////////////////////////////////////
+            ///
+
+
+            // Task 7: Repeating Menu with Exit Option
+
             bool exitDecision = false;
+            
 
-            do
+            while (exitDecision == false)
             {
-                Console.WriteLine("Enter the first number: ");
-                num1 = float.Parse(Console.ReadLine());
+                Console.WriteLine("Please select an option from the menu: ");
+                Console.WriteLine("1. Introduction");
+                Console.WriteLine("2. Information");
+                Console.WriteLine("3. Exit");
+                int userChoise = int.Parse(Console.ReadLine());
 
-                Console.WriteLine("Enter the second number to be divide: ");
-                num2 = float.Parse(Console.ReadLine());
 
-                try
+
+                switch (userChoise)
                 {
-                    Divition = num1 / num2;
+                    case 1:
+                        Console.WriteLine("Say Helloe.");
+                        break;
 
-                    if (num2 == 0)
-                    {
-                        Console.WriteLine("Error! " + num1 + " cannot be divided by zero.");
+                    case 2:
+                        Console.WriteLine("Wellcome to the resturant.");
+                        break;
+
+                    case 3:
+                        Console.WriteLine("Exit");
                         exitDecision = true;
-                    }
-                    else
-                    {
-                        Divition = num1 / num2;
-                        Console.WriteLine("The resulte is: " + Divition);
-                        exitDecision = true;
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
+                        break;
+
+                    default:
+                        Console.WriteLine("Invalid option.");
+                        break;
                 }
 
-                
             }
-            while (exitDecision);
 
         }
     }
