@@ -2,6 +2,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Diagnostics.Metrics;
 using System.Numerics;
+using System.Runtime.CompilerServices;
 
 namespace LoopErrorHandlingSolutions
 {
@@ -176,7 +177,7 @@ namespace LoopErrorHandlingSolutions
             // Task 7: Repeating Menu with Exit Option
 
             //bool exitDecision = false;
-            
+
 
             //while (exitDecision == false)
             //{
@@ -216,22 +217,72 @@ namespace LoopErrorHandlingSolutions
 
             // Task 8:  Sum of Even Numbers Only
 
-            int n = 0;
-            int sum;
+            //int n = 0;
+            //int sum;
 
-            Console.WriteLine("Enter a positive whole numebr: ");
-            n = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter a positive whole numebr: ");
+            //n = int.Parse(Console.ReadLine());
 
-            for (int i = 1; i <= n; i++)
+            //for (int i = 1; i <= n; i++)
+            //{
+            //    if (i % 2 == 0)
+            //    {
+            //        sum = i + n;
+
+            //        Console.WriteLine("You result = " + sum + " only even numbers " + "untill " + n);
+            //    }
+            //}
+
+            ////////////////////////////////////////////////////////////////////////////////////////
+            ///
+
+
+            // Task 9:  Validated Positive Number Input
+
+            int PositiveNumber = 0;
+            int sumOfNumber;
+            bool exit = false;
+
+            do
             {
-                if (i % 2 == 0)
-                {
-                    sum = i + n;
+                Console.WriteLine("Enter a positive whole number: ");
+                PositiveNumber = int.Parse(Console.ReadLine());
 
-                    Console.WriteLine("You result = " + sum + " only even numbers " + "untill " + n);
+                if (PositiveNumber > 0 && PositiveNumber == (PositiveNumber))
+                {
+                    Console.WriteLine("This is a positive whole number.");
+
+                    for (int i = 1; i <= PositiveNumber; i++)
+                    {
+                        sumOfNumber = i + PositiveNumber;
+
+                        Console.WriteLine("Your result = " + sumOfNumber);
+                    }
+
+                }
+                else
+                {
+                    Console.WriteLine("Not a positive whole number.");
+                }
+
+                try
+                {
+
+                    Console.WriteLine("Do you want to try again (y/n)");
+                    string userChoise = Console.ReadLine();
+
+                    if (userChoise == "yes")
+                    {
+                        exit = true;
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
                 }
             }
-
+            while (exit);
 
         }
     }
