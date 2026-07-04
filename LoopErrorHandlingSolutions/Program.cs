@@ -175,40 +175,63 @@ namespace LoopErrorHandlingSolutions
 
             // Task 7: Repeating Menu with Exit Option
 
-            bool exitDecision = false;
+            //bool exitDecision = false;
             
 
-            while (exitDecision == false)
+            //while (exitDecision == false)
+            //{
+            //    Console.WriteLine("Please select an option from the menu: ");
+            //    Console.WriteLine("1. Introduction");
+            //    Console.WriteLine("2. Information");
+            //    Console.WriteLine("3. Exit");
+            //    int userChoise = int.Parse(Console.ReadLine());
+
+
+
+            //    switch (userChoise)
+            //    {
+            //        case 1:
+            //            Console.WriteLine("Say Helloe.");
+            //            break;
+
+            //        case 2:
+            //            Console.WriteLine("Wellcome to the resturant.");
+            //            break;
+
+            //        case 3:
+            //            Console.WriteLine("Exit");
+            //            exitDecision = true;
+            //            break;
+
+            //        default:
+            //            Console.WriteLine("Invalid option.");
+            //            break;
+            //    }
+
+            //}
+
+            ////////////////////////////////////////////////////////////////////////////////////////
+            ///
+
+
+            // Task 8:  Sum of Even Numbers Only
+
+            int n = 0;
+            int sum;
+
+            Console.WriteLine("Enter a positive whole numebr: ");
+            n = int.Parse(Console.ReadLine());
+
+            for (int i = 1; i <= n; i++)
             {
-                Console.WriteLine("Please select an option from the menu: ");
-                Console.WriteLine("1. Introduction");
-                Console.WriteLine("2. Information");
-                Console.WriteLine("3. Exit");
-                int userChoise = int.Parse(Console.ReadLine());
-
-
-
-                switch (userChoise)
+                if (i % 2 == 0)
                 {
-                    case 1:
-                        Console.WriteLine("Say Helloe.");
-                        break;
+                    sum = i + n;
 
-                    case 2:
-                        Console.WriteLine("Wellcome to the resturant.");
-                        break;
-
-                    case 3:
-                        Console.WriteLine("Exit");
-                        exitDecision = true;
-                        break;
-
-                    default:
-                        Console.WriteLine("Invalid option.");
-                        break;
+                    Console.WriteLine("You result = " + sum + " only even numbers " + "untill " + n);
                 }
-
             }
+
 
         }
     }
