@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
 using System.Diagnostics.Metrics;
+using System.Numerics;
 
 namespace LoopErrorHandlingSolutions
 {
@@ -96,30 +97,75 @@ namespace LoopErrorHandlingSolutions
 
             // Task 5: Number Guessing Game
 
+            //bool exitDecision = false;
+            //int FixedNumber = 15;
+            //int Number;
+
+            //do
+            //{
+            //    Console.WriteLine("Enter a random number to start guessing: ");
+            //    Number = int.Parse(Console.ReadLine());
+
+            //    if (Number > FixedNumber)
+            //    {
+            //        Console.WriteLine("Too high.");
+            //        exitDecision = true;
+            //    }
+            //    else if (Number < FixedNumber)
+            //    {
+            //        Console.WriteLine("Too low.");
+            //        exitDecision = true;
+            //    }
+            //    else if (Number == FixedNumber)
+            //    {
+            //        Console.WriteLine("Correct.");
+            //        exitDecision = false;
+            //    }
+            //}
+            //while (exitDecision);
+
+            ////////////////////////////////////////////////////////////////////////////////////////
+            ///
+
+
+            // Task 6: Safe Division Calculator
+
+            float num1;
+            float num2;
+            float result;
+            float Divition;
             bool exitDecision = false;
-            int FixedNumber = 15;
-            int Number;
 
             do
             {
-                Console.WriteLine("Enter a random number to start guessing: ");
-                Number = int.Parse(Console.ReadLine());
+                Console.WriteLine("Enter the first number: ");
+                num1 = float.Parse(Console.ReadLine());
 
-                if (Number > FixedNumber)
+                Console.WriteLine("Enter the second number to be divide: ");
+                num2 = float.Parse(Console.ReadLine());
+
+                try
                 {
-                    Console.WriteLine("Too high.");
-                    exitDecision = true;
+                    Divition = num1 / num2;
+
+                    if (num2 == 0)
+                    {
+                        Console.WriteLine("Error! " + num1 + " cannot be divided by zero.");
+                        exitDecision = true;
+                    }
+                    else
+                    {
+                        Divition = num1 / num2;
+                        Console.WriteLine("The resulte is: " + Divition);
+                        exitDecision = true;
+                    }
                 }
-                else if (Number < FixedNumber)
+                catch (Exception ex)
                 {
-                    Console.WriteLine("Too low.");
-                    exitDecision = true;
+                    Console.WriteLine(ex.Message);
                 }
-                else if (Number == FixedNumber)
-                {
-                    Console.WriteLine("Correct.");
-                    exitDecision = false;
-                }
+
+                
             }
             while (exitDecision);
 
