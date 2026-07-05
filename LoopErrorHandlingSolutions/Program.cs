@@ -239,56 +239,183 @@ namespace LoopErrorHandlingSolutions
 
             // Task 9:  Validated Positive Number Input
 
-            int PositiveNumber = 0;
-            int sumOfNumber;
-            bool exit = false;
+            //int PositiveNumber = 0;
+            //int sumOfNumber;
+            //bool exit = false;
 
-            do
-            {
-                Console.WriteLine("Enter a positive whole number: ");
-                PositiveNumber = int.Parse(Console.ReadLine());
+            //do
+            //{
+            //    Console.WriteLine("Enter a positive whole number: ");
+            //    PositiveNumber = int.Parse(Console.ReadLine());
 
-                if (PositiveNumber > 0 && PositiveNumber == (PositiveNumber))
-                {
-                    Console.WriteLine("This is a positive whole number.");
+            //    if (PositiveNumber > 0 && PositiveNumber == (PositiveNumber))
+            //    {
+            //        Console.WriteLine("This is a positive whole number.");
 
-                    for (int i = 1; i <= PositiveNumber; i++)
-                    {
-                        sumOfNumber = i + PositiveNumber;
+            //        for (int i = 1; i <= PositiveNumber; i++)
+            //        {
+            //            sumOfNumber = i + PositiveNumber;
 
-                        Console.WriteLine("Your result = " + sumOfNumber);
-                    }
+            //            Console.WriteLine("Your result = " + sumOfNumber);
+            //        }
 
-                }
-                else
-                {
-                    Console.WriteLine("Not a positive whole number.");
-                }
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("Not a positive whole number.");
+            //    }
 
-                try
-                {
+            //    try
+            //    {
 
-                    Console.WriteLine("Do you want to try again (y/n)");
-                    string userChoise = Console.ReadLine();
+            //        Console.WriteLine("Do you want to try again (y/n)");
+            //        string userChoise = Console.ReadLine();
 
-                    if (userChoise == "yes")
-                    {
-                        exit = true;
-                    }
+            //        if (userChoise == "yes")
+            //        {
+            //            exit = true;
+            //        }
 
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
-            }
-            while (exit);
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        Console.WriteLine(ex.Message);
+            //    }
+            //}
+            //while (exit);
 
             ////////////////////////////////////////////////////////////////////////////////////////
             ///
 
 
-            // Task 10: 
+            // Task 10: Simple ATM Simulation
+
+            int userPIN;
+            int PIN = 1234;
+            int fixedBalance = 100;
+            int maxAttempts = 3;
+            int AvailableAttempts = 1;
+            bool exit = false;
+            int reciverNumber = 992211;
+            int reciverAccount;
+            int currentBalance;
+
+            do
+            {
+
+                try
+                {
+
+                    Console.WriteLine("Enter PIN: ");
+                    userPIN = int.Parse(Console.ReadLine());
+
+
+                    if (userPIN != PIN)
+                    {
+                        maxAttempts--;
+                        Console.WriteLine("Inccorect PIN. Please try again. " + " Left Attempts: " +maxAttempts);
+                        exit = false;
+
+                        if (maxAttempts < 1)
+                        {
+                            Console.WriteLine("Your account is blocked. You exceeded your attempts!");
+                            Console.WriteLine("Please contact us to activate your account.");
+                            exit = true;
+                        }
+
+                    }
+                    else
+                    {
+                        Console.WriteLine("Correct PIN");
+
+
+                        Console.WriteLine("Choose your option: ");
+                        Console.WriteLine("1. Deposit");
+                        Console.WriteLine("2. Withdraw");
+                        Console.WriteLine("3. Check Balance");
+                        Console.WriteLine("4. Exit");
+                        int Service = int.Parse(Console.ReadLine());
+
+
+
+
+                        switch (Service)
+                        {
+
+                            case 1:
+                                Console.WriteLine("Deposit: ");
+                                Console.WriteLine("Please Enter Reciver Acount number: ");
+                                reciverAccount = int.Parse(Console.ReadLine());
+
+                                if (reciverAccount != reciverNumber )
+                                {
+                                    Console.WriteLine("This account is not available.");
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Enter how much you whant to deposit: ");
+                                    int Deposit = int.Parse(Console.ReadLine());
+
+                                    if (Deposit > fixedBalance)
+                                    {
+                                        Console.WriteLine("You don't have enough balance.");
+                                        exit = true;
+                                    }
+                                    else
+                                    {
+                                        currentBalance =  fixedBalance - Deposit;
+                                        Console.WriteLine("Deposit success! Your Current Balance: " + currentBalance);
+                                    }
+                                }
+                                break;
+
+                            case 2:
+                                Console.WriteLine("Withdraw");
+                                Console.WriteLine("Enter how much you want to Withdraw: ");
+                                int Withdraw = int.Parse(Console.ReadLine());
+
+                                if (Withdraw > fixedBalance)
+                                {
+                                    Console.WriteLine("You don't have enough balance.");
+                                    exit = true;
+                                }
+                                else
+                                {
+                                    currentBalance =  fixedBalance - Withdraw;
+                                    Console.WriteLine("Withdraw success");
+                                    Console.WriteLine("Please collect your cash.");
+                                    Console.WriteLine("Your current balance: " + currentBalance);
+                                    exit = true;
+                                }
+
+                                break;
+
+                            case 3:
+                                Console.WriteLine("Check Balance");
+                                Console.WriteLine("Your available balance: " + fixedBalance);
+                                break;
+
+                            case 4:
+                                Console.WriteLine("Thank you!");
+                                exit = true;
+                                break;
+
+                            default:
+                                Console.WriteLine("You entered invalid choise. Please try again.");
+                                exit = false;
+                                break;
+                        }
+
+                        exit = true;
+                    }
+                }
+                catch (Exception ex) 
+                {
+                    Console.WriteLine("Failed, you entered invalid input"); 
+                    Console.WriteLine(ex);
+                }
+
+            } while (!exit);
 
 
 
