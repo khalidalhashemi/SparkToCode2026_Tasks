@@ -184,30 +184,51 @@ namespace Task3Buil_inFunctions
 
             // Task 8: Membership Expiry Checker
 
-            try
-            {
-                Console.WriteLine("Enter your membership start date: (mm/dd/yyyy)");
-                DateTime membership = DateTime.Parse(Console.ReadLine());
+            //try
+            //{
+            //    Console.WriteLine("Enter your membership start date: (mm/dd/yyyy)");
+            //    DateTime membership = DateTime.Parse(Console.ReadLine());
 
-                Console.WriteLine("Enter the valid membership days: ");
-                int validDays = int.Parse(Console.ReadLine());
+            //    Console.WriteLine("Enter the valid membership days: ");
+            //    int validDays = int.Parse(Console.ReadLine());
 
-                DateTime currentDate = DateTime.Today;
-                DateTime endmembership = membership.AddDays(validDays);
+            //    DateTime currentDate = DateTime.Today;
+            //    DateTime endmembership = membership.AddDays(validDays);
 
-                if (currentDate <= endmembership)
-                {
-                    Console.WriteLine("Your membership is active until: " + endmembership);
-                }
-                else
-                {
-                    Console.WriteLine("Your membership is expired on: " + endmembership);
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
+            //    if (currentDate <= endmembership)
+            //    {
+            //        Console.WriteLine("Your membership is active until: " + endmembership);
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("Your membership is expired on: " + endmembership);
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    Console.WriteLine(ex.Message);
+            //}
+
+            ///////////////////////////////////////////////////////////////////////////
+            ///
+
+
+            // Task 9:  Round Up / Round Down Explorer
+
+            Console.WriteLine("Enter a decimal number to start rounding: ");
+            float decNumber = float.Parse(Console.ReadLine());
+
+            double nearestWholeNumber = Math.Round(decNumber);
+
+            double alwaysRoundedUp = Math.Ceiling(decNumber);
+
+            double alwaysRoundedDown = Math.Floor(decNumber);
+
+            Console.WriteLine("Result of " + decNumber + " rounded to the nearest whole number = " + nearestWholeNumber);
+
+            Console.WriteLine("Result of " + decNumber + " rounded always up = " + alwaysRoundedUp);
+
+            Console.WriteLine("Result of " + decNumber + " rounded always down = " + alwaysRoundedDown);
 
 
 
