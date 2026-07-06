@@ -80,24 +80,55 @@ namespace Task3Buil_inFunctions
 
             // Task 5:  Grade Rounding System
 
-            Console.WriteLine("Enter your exam test in decimal: ");
-            float grade = float.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter your exam test in decimal: ");
+            //float grade = float.Parse(Console.ReadLine());
 
-            double roundedGrade = Math.Round(grade);
+            //double roundedGrade = Math.Round(grade);
 
-            if (roundedGrade >= 60)
+            //if (roundedGrade >= 60)
+            //{
+            //    Console.WriteLine("You Passed!");
+            //    Console.WriteLine("Your Grade is: " + grade);
+            //    Console.WriteLine("Your Rounded Grade is: " + roundedGrade);
+            //}
+            //else
+            //{
+            //    Console.WriteLine("You Failed!");
+            //    Console.WriteLine("Your Grade is: " + grade);
+            //    Console.WriteLine("Your Rounded Grade is: " + roundedGrade);
+            //}
+
+            ///////////////////////////////////////////////////////////////////////////
+            ///
+
+
+            // Task 6: Pad Strength Checkersswor
+
+            string invalidPass = "Password";
+
+            Console.WriteLine("Enter a new password: ");
+            Console.WriteLine("Your password should contains at least 8 charchters and " +
+                              "Should no be contains (password).");
+            string userPassword = Console.ReadLine();
+
+            int passwordLength = userPassword.Length;
+
+            if (passwordLength < 8)
             {
-                Console.WriteLine("You Passed!");
-                Console.WriteLine("Your Grade is: " + grade);
-                Console.WriteLine("Your Rounded Grade is: " + roundedGrade);
+                Console.WriteLine("Weak password.");
+            }
+            else if (userPassword.ToUpper() == invalidPass.ToUpper() || userPassword.ToLower() == invalidPass.ToLower())
+            {
+                Console.WriteLine("Weak password.");
+            }
+            else if (passwordLength < 8 && userPassword.ToUpper() == invalidPass.ToUpper() || userPassword.ToLower() == invalidPass.ToLower())
+            {
+                Console.WriteLine("Weak password.");
             }
             else
             {
-                Console.WriteLine("You Failed!");
-                Console.WriteLine("Your Grade is: " + grade);
-                Console.WriteLine("Your Rounded Grade is: " + roundedGrade);
+                Console.WriteLine("Strong password!");
             }
-
         }
     }
 }
