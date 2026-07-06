@@ -136,20 +136,45 @@ namespace Task3Buil_inFunctions
 
             // Task 6 (modified): Password Strength Checkersswor
 
-            Console.WriteLine("Enter a new password: ");
-            string userPassword = Console.ReadLine();
+            //Console.WriteLine("Enter a new password: ");
+            //string userPassword = Console.ReadLine();
 
-            bool passwordLength = userPassword.Length >= 8;
+            //bool passwordLength = userPassword.Length >= 8;
 
-            bool contains = userPassword.Contains("Password".ToLower());
+            //bool contains = userPassword.Contains("Password".ToLower());
 
-            if (passwordLength && contains == false)
+            //if (passwordLength && contains == false)
+            //{
+            //    Console.WriteLine("Strong Password!");
+            //}
+            //else if (contains)
+            //{
+            //    Console.WriteLine("Weak Password.");
+            //}
+
+            ///////////////////////////////////////////////////////////////////////////
+            ///
+
+
+            // Task 7: Clean Name Comparator
+
+            Console.WriteLine("Enter your name: ");
+            string userName = Console.ReadLine();
+
+            Console.WriteLine("Confirm your name: ");
+            string userNameConfg = Console.ReadLine();
+
+            string trimmedUserName = userName.Trim().ToLower();
+
+            string trimmedUserName2 = userNameConfg.Trim().ToLower();
+
+            if (trimmedUserName == trimmedUserName2)
             {
-                Console.WriteLine("Strong Password!");
+                Console.WriteLine("Name Match!");
             }
-            else if (contains)
+            else
             {
-                Console.WriteLine("Weak Password.");
+                Console.WriteLine("Name Not Match.");
             }
 
 
