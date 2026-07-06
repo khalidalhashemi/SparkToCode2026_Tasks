@@ -1,4 +1,5 @@
-﻿using System.Runtime.Intrinsics.X86;
+﻿using System.Diagnostics.CodeAnalysis;
+using System.Runtime.Intrinsics.X86;
 
 namespace Task3Buil_inFunctions
 {
@@ -158,25 +159,55 @@ namespace Task3Buil_inFunctions
 
             // Task 7: Clean Name Comparator
 
-            Console.WriteLine("Enter your name: ");
-            string userName = Console.ReadLine();
+            //Console.WriteLine("Enter your name: ");
+            //string userName = Console.ReadLine();
 
-            Console.WriteLine("Confirm your name: ");
-            string userNameConfg = Console.ReadLine();
+            //Console.WriteLine("Confirm your name: ");
+            //string userNameConfg = Console.ReadLine();
 
-            string trimmedUserName = userName.Trim().ToLower();
+            //string trimmedUserName = userName.Trim().ToLower();
 
-            string trimmedUserName2 = userNameConfg.Trim().ToLower();
+            //string trimmedUserName2 = userNameConfg.Trim().ToLower();
 
-            if (trimmedUserName == trimmedUserName2)
+            //if (trimmedUserName == trimmedUserName2)
+            //{
+            //    Console.WriteLine("Name Match!");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Name Not Match.");
+            //}
+
+            ///////////////////////////////////////////////////////////////////////////
+            ///
+
+
+            // Task 8: Membership Expiry Checker
+
+            try
             {
-                Console.WriteLine("Name Match!");
-            }
-            else
-            {
-                Console.WriteLine("Name Not Match.");
-            }
+                Console.WriteLine("Enter your membership start date: (mm/dd/yyyy)");
+                DateTime membership = DateTime.Parse(Console.ReadLine());
 
+                Console.WriteLine("Enter the valid membership days: ");
+                int validDays = int.Parse(Console.ReadLine());
+
+                DateTime currentDate = DateTime.Today;
+                DateTime endmembership = membership.AddDays(validDays);
+
+                if (currentDate <= endmembership)
+                {
+                    Console.WriteLine("Your membership is active until: " + endmembership);
+                }
+                else
+                {
+                    Console.WriteLine("Your membership is expired on: " + endmembership);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
 
 
 
