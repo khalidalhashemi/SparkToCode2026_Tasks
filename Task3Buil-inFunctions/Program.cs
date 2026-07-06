@@ -215,20 +215,50 @@ namespace Task3Buil_inFunctions
 
             // Task 9:  Round Up / Round Down Explorer
 
-            Console.WriteLine("Enter a decimal number to start rounding: ");
-            float decNumber = float.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter a decimal number to start rounding: ");
+            //float decNumber = float.Parse(Console.ReadLine());
 
-            double nearestWholeNumber = Math.Round(decNumber);
+            //double nearestWholeNumber = Math.Round(decNumber);
 
-            double alwaysRoundedUp = Math.Ceiling(decNumber);
+            //double alwaysRoundedUp = Math.Ceiling(decNumber);
 
-            double alwaysRoundedDown = Math.Floor(decNumber);
+            //double alwaysRoundedDown = Math.Floor(decNumber);
 
-            Console.WriteLine("Result of " + decNumber + " rounded to the nearest whole number = " + nearestWholeNumber);
+            //Console.WriteLine("Result of " + decNumber + " rounded to the nearest whole number = " + nearestWholeNumber);
 
-            Console.WriteLine("Result of " + decNumber + " rounded always up = " + alwaysRoundedUp);
+            //Console.WriteLine("Result of " + decNumber + " rounded always up = " + alwaysRoundedUp);
 
-            Console.WriteLine("Result of " + decNumber + " rounded always down = " + alwaysRoundedDown);
+            //Console.WriteLine("Result of " + decNumber + " rounded always down = " + alwaysRoundedDown);
+
+            ///////////////////////////////////////////////////////////////////////////
+            ///
+
+
+
+            // Task 10: Word Position Finder
+
+            Console.WriteLine("Enter a full sentence: ");
+            string sentence = Console.ReadLine();
+
+            Console.WriteLine("Enter a single word to find if it is exist in the sentence of not: ");
+            string sentenceWord = Console.ReadLine();
+
+            bool wordContains = sentence.Contains(sentenceWord);
+
+            int firstAppears = sentence.IndexOf(sentenceWord);
+
+            int lastApppears = sentence.LastIndexOf(sentenceWord);
+
+            if (wordContains)
+            {
+                Console.WriteLine("The word appears in the sentence.");
+                Console.WriteLine("The first appear in index: " + firstAppears);
+                Console.WriteLine("The Last appear in index: " + lastApppears);
+            }
+            else
+            {
+                Console.WriteLine("word not found.");
+            }
 
 
 
