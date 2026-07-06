@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics.CodeAnalysis;
+using System.Net.Http.Headers;
 using System.Runtime.Intrinsics.X86;
 using System.Security;
 
@@ -267,58 +268,100 @@ namespace Task3Buil_inFunctions
 
             // Task 11: One-Time Password (OTP) Generator
 
-            int Attempts = 3;
-            int trueOTP;
-            bool Verification = false;
-            bool exit = false;
+            //int Attempts = 3;
+            //int trueOTP;
+            //bool Verification = false;
+            //bool exit = false;
 
-            Console.WriteLine("Enter your phone number to sent OTP.");
-            int phoneNumber = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter your phone number to sent OTP.");
+            //int phoneNumber = int.Parse(Console.ReadLine());
 
-            Random OTP = new Random();
+            //Random OTP = new Random();
 
-            trueOTP = OTP.Next(1000, 9999);
+            //trueOTP = OTP.Next(1000, 9999);
 
-            Console.WriteLine("Your OTP is: " + trueOTP);
+            //Console.WriteLine("Your OTP is: " + trueOTP);
 
-            do
+            //do
+            //{
+            //    try
+            //    {
+            //        Console.WriteLine("Enter the OTP: ");
+            //        int userOTP = int.Parse(Console.ReadLine());
+
+            //        if (userOTP == trueOTP)
+            //        {
+            //            Verification = true;
+            //            Console.WriteLine("OTP Verified!");
+            //            exit = false;
+            //        }
+            //        else
+            //        {
+            //            Console.WriteLine("Invalid OTP.");
+            //            exit = true;
+            //            Attempts--;
+            //        }
+
+            //        if (Verification == false)
+            //        {
+            //            Console.WriteLine("Please Try again. You have left " + Attempts + " attempts");
+            //        }
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        Console.WriteLine(ex.Message);
+            //    }
+
+            //    if (Attempts == 0)
+            //    {
+            //        Console.WriteLine("Verification Failed!");
+            //        exit = false;
+            //    }
+            //}
+
+            //while (exit) ;
+
+            ///////////////////////////////////////////////////////////////////////////
+            ///
+
+
+            // Task 12: Birthday Insights
+
+            int age;
+
+            try
             {
-                try
+
+                Console.WriteLine("Enter your date of birth: ");
+                DateTime DateOfBirth = DateTime.Parse(Console.ReadLine());
+
+                int BirthMonth = DateOfBirth.Month;
+
+                int BirthYear = DateOfBirth.Year;
+
+                DateTime TodayDate = DateTime.Today;
+
+                int CurrentYear = TodayDate.Year;
+
+                Console.WriteLine("Is your birthday this year already happened? (yes/no)");
+                string userInput = Console.ReadLine();
+
+                if (userInput == "yes")
                 {
-                    Console.WriteLine("Enter the OTP: ");
-                    int userOTP = int.Parse(Console.ReadLine());
-
-                    if (userOTP == trueOTP)
-                    {
-                        Verification = true;
-                        Console.WriteLine("OTP Verified!");
-                        exit = false;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Invalid OTP.");
-                        exit = true;
-                        Attempts--;
-                    }
-
-                    if (Verification == false)
-                    {
-                        Console.WriteLine("Please Try again. You have left " + Attempts + " attempts");
-                    }
+                    age = CurrentYear - BirthYear;
+                    Console.WriteLine("Your age is: " + age + " Born on " + DateOfBirth.DayOfWeek + " and " + BirthMonth + " month");
                 }
-                catch (Exception ex)
+                else
                 {
-                    Console.WriteLine(ex.Message);
+                    age = (CurrentYear - BirthYear) - 1;
+                    Console.WriteLine("Your age is: " + age + " Born on " + DateOfBirth.DayOfWeek + " and " + BirthMonth + " month");
                 }
 
-                if (Attempts == 0)
-                {
-                    Console.WriteLine("Verification Failed!");
-                    exit = false;
-                }
             }
-
-            while (exit) ;
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
 
 
         }
