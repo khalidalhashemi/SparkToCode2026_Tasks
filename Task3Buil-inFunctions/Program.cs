@@ -65,14 +65,39 @@ namespace Task3Buil_inFunctions
 
             // Task 4:  Subscription End Date
 
-            Console.WriteLine("Enter the days for free trial: ");
-            int freeTrial = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter the days for free trial: ");
+            //int freeTrial = int.Parse(Console.ReadLine());
 
-            DateTime startTrial = DateTime.Today;
+            //DateTime startTrial = DateTime.Today;
 
-            DateTime endTrial = startTrial.AddDays(freeTrial);
+            //DateTime endTrial = startTrial.AddDays(freeTrial);
 
-            Console.WriteLine("Your free trail ends on: " + endTrial);
+            //Console.WriteLine("Your free trail ends on: " + endTrial);
+
+            ///////////////////////////////////////////////////////////////////////////
+            ///
+
+
+            // Task 5:  Grade Rounding System
+
+            Console.WriteLine("Enter your exam test in decimal: ");
+            float grade = float.Parse(Console.ReadLine());
+
+            double roundedGrade = Math.Round(grade);
+
+            if (roundedGrade >= 60)
+            {
+                Console.WriteLine("You Passed!");
+                Console.WriteLine("Your Grade is: " + grade);
+                Console.WriteLine("Your Rounded Grade is: " + roundedGrade);
+            }
+            else
+            {
+                Console.WriteLine("You Failed!");
+                Console.WriteLine("Your Grade is: " + grade);
+                Console.WriteLine("Your Rounded Grade is: " + roundedGrade);
+            }
+
         }
     }
 }
