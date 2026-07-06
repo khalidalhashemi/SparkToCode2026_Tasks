@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using System.Runtime.Intrinsics.X86;
+using System.Security;
 
 namespace Task3Buil_inFunctions
 {
@@ -237,30 +238,87 @@ namespace Task3Buil_inFunctions
 
             // Task 10: Word Position Finder
 
-            Console.WriteLine("Enter a full sentence: ");
-            string sentence = Console.ReadLine();
+            //Console.WriteLine("Enter a full sentence: ");
+            //string sentence = Console.ReadLine();
 
-            Console.WriteLine("Enter a single word to find if it is exist in the sentence of not: ");
-            string sentenceWord = Console.ReadLine();
+            //Console.WriteLine("Enter a single word to find if it is exist in the sentence of not: ");
+            //string sentenceWord = Console.ReadLine();
 
-            bool wordContains = sentence.Contains(sentenceWord);
+            //bool wordContains = sentence.Contains(sentenceWord);
 
-            int firstAppears = sentence.IndexOf(sentenceWord);
+            //int firstAppears = sentence.IndexOf(sentenceWord);
 
-            int lastApppears = sentence.LastIndexOf(sentenceWord);
+            //int lastApppears = sentence.LastIndexOf(sentenceWord);
 
-            if (wordContains)
+            //if (wordContains)
+            //{
+            //    Console.WriteLine("The word appears in the sentence.");
+            //    Console.WriteLine("The first appear in index: " + firstAppears);
+            //    Console.WriteLine("The Last appear in index: " + lastApppears);
+            //}
+            //else
+            //{
+            //    Console.WriteLine("word not found.");
+            //}
+
+            ///////////////////////////////////////////////////////////////////////////
+            ///
+
+
+            // Task 11: One-Time Password (OTP) Generator
+
+            int Attempts = 3;
+            int trueOTP;
+            bool Verification = false;
+            bool exit = false;
+
+            Console.WriteLine("Enter your phone number to sent OTP.");
+            int phoneNumber = int.Parse(Console.ReadLine());
+
+            Random OTP = new Random();
+
+            trueOTP = OTP.Next(1000, 9999);
+
+            Console.WriteLine("Your OTP is: " + trueOTP);
+
+            do
             {
-                Console.WriteLine("The word appears in the sentence.");
-                Console.WriteLine("The first appear in index: " + firstAppears);
-                Console.WriteLine("The Last appear in index: " + lastApppears);
-            }
-            else
-            {
-                Console.WriteLine("word not found.");
+                try
+                {
+                    Console.WriteLine("Enter the OTP: ");
+                    int userOTP = int.Parse(Console.ReadLine());
+
+                    if (userOTP == trueOTP)
+                    {
+                        Verification = true;
+                        Console.WriteLine("OTP Verified!");
+                        exit = false;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid OTP.");
+                        exit = true;
+                        Attempts--;
+                    }
+
+                    if (Verification == false)
+                    {
+                        Console.WriteLine("Please Try again. You have left " + Attempts + " attempts");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+
+                if (Attempts == 0)
+                {
+                    Console.WriteLine("Verification Failed!");
+                    exit = false;
+                }
             }
 
-
+            while (exit) ;
 
 
         }
