@@ -28,17 +28,36 @@ namespace Task3Buil_inFunctions
 
             // Task 2: Power & Root Explorer
 
-            int number;
+            //int number;
 
-            Console.WriteLine("Enter a number: ");
-            number = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter a number: ");
+            //number = int.Parse(Console.ReadLine());
 
-            double Power = Math.Pow(number, 2);
+            //double Power = Math.Pow(number, 2);
 
-            double squareRoot = Math.Sqrt(number);
+            //double squareRoot = Math.Sqrt(number);
 
-            Console.WriteLine("Your power of 2 is: " + Power);
-            Console.WriteLine("Your Square Root is: " + squareRoot);
+            //Console.WriteLine("Your power of 2 is: " + Power);
+            //Console.WriteLine("Your Square Root is: " + squareRoot);
+
+            ///////////////////////////////////////////////////////////////////////////
+            ///
+
+
+            // Task 3: Name Formatter
+
+            Console.WriteLine("Enter your full name: ");
+            string name = Console.ReadLine();
+
+            string upperName = name.ToUpper();
+
+            string lowerName = name.ToLower();
+
+            int lenght = name.Length;
+
+            Console.WriteLine("Your name in UpperCase: " + upperName);
+            Console.WriteLine("Your name in LowerCase: " + lowerName);
+            Console.WriteLine("Lenght of your name is: " + lenght);
 
         }
     }
