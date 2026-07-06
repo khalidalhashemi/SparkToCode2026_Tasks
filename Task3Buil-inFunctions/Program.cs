@@ -46,19 +46,33 @@ namespace Task3Buil_inFunctions
 
             // Task 3: Name Formatter
 
-            Console.WriteLine("Enter your full name: ");
-            string name = Console.ReadLine();
+            //Console.WriteLine("Enter your full name: ");
+            //string name = Console.ReadLine();
 
-            string upperName = name.ToUpper();
+            //string upperName = name.ToUpper();
 
-            string lowerName = name.ToLower();
+            //string lowerName = name.ToLower();
 
-            int lenght = name.Length;
+            //int lenght = name.Length;
 
-            Console.WriteLine("Your name in UpperCase: " + upperName);
-            Console.WriteLine("Your name in LowerCase: " + lowerName);
-            Console.WriteLine("Lenght of your name is: " + lenght);
+            //Console.WriteLine("Your name in UpperCase: " + upperName);
+            //Console.WriteLine("Your name in LowerCase: " + lowerName);
+            //Console.WriteLine("Lenght of your name is: " + lenght);
 
+            ///////////////////////////////////////////////////////////////////////////
+            ///
+
+
+            // Task 4:  Subscription End Date
+
+            Console.WriteLine("Enter the days for free trial: ");
+            int freeTrial = int.Parse(Console.ReadLine());
+
+            DateTime startTrial = DateTime.Today;
+
+            DateTime endTrial = startTrial.AddDays(freeTrial);
+
+            Console.WriteLine("Your free trail ends on: " + endTrial);
         }
     }
 }
