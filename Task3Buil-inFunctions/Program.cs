@@ -102,33 +102,60 @@ namespace Task3Buil_inFunctions
             ///
 
 
-            // Task 6: Pad Strength Checkersswor
+            //// Task 6: Password Strength Checkersswor
 
-            string invalidPass = "Password";
+            //string invalidPass = "Password";
+
+            //Console.WriteLine("Enter a new password: ");
+            //Console.WriteLine("Your password should contains at least 8 charchters and " +
+            //                  "Should no be contains (password).");
+            //string userPassword = Console.ReadLine();
+
+            //int passwordLength = userPassword.Length;
+
+            //if (passwordLength < 8)
+            //{
+            //    Console.WriteLine("Weak password.");
+            //}
+            //else if (userPassword.ToUpper() == invalidPass.ToUpper() || userPassword.ToLower() == invalidPass.ToLower())
+            //{
+            //    Console.WriteLine("Weak password.");
+            //}
+            //else if (passwordLength < 8 && userPassword.ToUpper() == invalidPass.ToUpper() || userPassword.ToLower() == invalidPass.ToLower())
+            //{
+            //    Console.WriteLine("Weak password.");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Strong password!");
+            //}
+
+            ///////////////////////////////////////////////////////////////////////////
+            ///
+
+
+            // Task 6 (modified): Password Strength Checkersswor
 
             Console.WriteLine("Enter a new password: ");
-            Console.WriteLine("Your password should contains at least 8 charchters and " +
-                              "Should no be contains (password).");
             string userPassword = Console.ReadLine();
 
-            int passwordLength = userPassword.Length;
+            bool passwordLength = userPassword.Length >= 8;
 
-            if (passwordLength < 8)
+            bool contains = userPassword.Contains("Password".ToLower());
+
+            if (passwordLength && contains == false)
             {
-                Console.WriteLine("Weak password.");
+                Console.WriteLine("Strong Password!");
             }
-            else if (userPassword.ToUpper() == invalidPass.ToUpper() || userPassword.ToLower() == invalidPass.ToLower())
+            else if (contains)
             {
-                Console.WriteLine("Weak password.");
+                Console.WriteLine("Weak Password.");
             }
-            else if (passwordLength < 8 && userPassword.ToUpper() == invalidPass.ToUpper() || userPassword.ToLower() == invalidPass.ToLower())
-            {
-                Console.WriteLine("Weak password.");
-            }
-            else
-            {
-                Console.WriteLine("Strong password!");
-            }
+
+
+
+
+
         }
     }
 }
