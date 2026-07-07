@@ -64,6 +64,31 @@
             return Perimeter;
         }
 
+        public static string GetGradeLetter(int Grade)
+        {
+
+            if (Grade >= 90)
+            {
+                return "A";
+            }
+            else if (Grade <= 89 && Grade >= 70)
+            {
+                return "B";
+            }
+            else if (Grade <= 69 && Grade >=60 )
+            {
+                return "C";
+            }
+            else if (Grade <= 50 && Grade >= 40)
+            {
+                return "D";
+            }
+            else
+            {
+                return "F";
+            }
+        }
+
         static void Main(string[] args)
         {
 
@@ -139,29 +164,45 @@
 
             // Task 6: Rectangle Area & Perimeter Functions
 
-            double Area;
-            double Perimeter;
+            //double Area;
+            //double Perimeter;
 
-            Console.WriteLine("Enter length of Rectagle to calculate Area: ");
-            double areaLength = double.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter length of Rectagle to calculate Area: ");
+            //double areaLength = double.Parse(Console.ReadLine());
 
-            Console.WriteLine("Enter width of Rectagle to calculate Area: ");
-            double areaWidth = double.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter width of Rectagle to calculate Area: ");
+            //double areaWidth = double.Parse(Console.ReadLine());
 
-            Area = RectArea(areaLength, areaWidth);
+            //Area = RectArea(areaLength, areaWidth);
 
-            Console.WriteLine("The Area of Rectangle is: " + Area);
+            //Console.WriteLine("The Area of Rectangle is: " + Area);
 
 
-            Console.WriteLine("Enter length of Rectagle to calculate Perimeter: ");
-            double perimeterLength = double.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter length of Rectagle to calculate Perimeter: ");
+            //double perimeterLength = double.Parse(Console.ReadLine());
 
-            Console.WriteLine("Enter width of Rectagle to calculate Perimeter: ");
-            double perimeterWidth = double.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter width of Rectagle to calculate Perimeter: ");
+            //double perimeterWidth = double.Parse(Console.ReadLine());
 
-            Perimeter = RectPerimeter(perimeterLength, perimeterWidth);
+            //Perimeter = RectPerimeter(perimeterLength, perimeterWidth);
 
-            Console.WriteLine("The Perimeter of Rectangle is :" + Perimeter);
+            //Console.WriteLine("The Perimeter of Rectangle is :" + Perimeter);
+
+            /////////////////////////////////////////////////////////
+            ///
+
+
+            // Task 7: Grade Letter Function
+
+            string FinalGrade;
+
+            Console.WriteLine("Enter your grade to classify it: ");
+            int Grade = int.Parse(Console.ReadLine());
+
+            FinalGrade = GetGradeLetter(Grade);
+
+            Console.WriteLine("Your Grade is: " + FinalGrade);
+
 
 
 
