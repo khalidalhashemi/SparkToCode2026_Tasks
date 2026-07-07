@@ -169,6 +169,47 @@
             Console.WriteLine("Your operation: " + operationName + " With result: " + result);
         }
 
+        public static double CalculateAverage(double grade1, double grade2, double grade3)
+        {
+            double average;
+
+            average = (grade1 + grade2 + grade3 ) / 3;
+
+            return average;
+        }
+
+        public static string GetGradeLetter(double average)
+        {
+            if (average >= 90)
+            {
+                return "A";
+            }
+            else if (average <= 89 && average >= 70)
+            {
+                return "B";
+            }
+            else if (average <= 69 && average >= 60)
+            {
+                return "C";
+            }
+            else if (average <= 50 && average >= 40)
+            {
+                return "D";
+            }
+            else
+            {
+                return "F";
+            }
+        }
+
+        public static void PrintReportCard(string studentName, double average, string gradeLetter)
+        {
+            Console.WriteLine("Your Card info: ");
+            Console.WriteLine("Student Name: " + studentName);
+            Console.WriteLine("Average Grade: " + average);
+            Console.WriteLine("Grade Letter: " + gradeLetter);
+        }
+
         static void Main(string[] args)
         {
 
@@ -387,102 +428,133 @@
 
             // Task 11:  Function-Based Calculator
 
-            double addResult;
-            double subResult;
-            double mulResult;
-            double divResult;
-            bool exit = false;
+            //double addResult;
+            //double subResult;
+            //double mulResult;
+            //double divResult;
+            //bool exit = false;
 
-            do
-            {
-                Console.WriteLine("Choose your operation: ");
-                Console.WriteLine("1. Addition");
-                Console.WriteLine("2. Subtraction");
-                Console.WriteLine("3. Multiplication");
-                Console.WriteLine("4. Divition");
-                int userChoise = int.Parse(Console.ReadLine());
+            //do
+            //{
+            //    Console.WriteLine("Choose your operation: ");
+            //    Console.WriteLine("1. Addition");
+            //    Console.WriteLine("2. Subtraction");
+            //    Console.WriteLine("3. Multiplication");
+            //    Console.WriteLine("4. Divition");
+            //    int userChoise = int.Parse(Console.ReadLine());
 
-                switch (userChoise)
-                {
-                    case 1:
-                        Console.WriteLine("You choosed Addition.");
+            //    switch (userChoise)
+            //    {
+            //        case 1:
+            //            Console.WriteLine("You choosed Addition.");
 
-                        Console.WriteLine("Enter first number: ");
-                        double addNum1 = double.Parse(Console.ReadLine());
+            //            Console.WriteLine("Enter first number: ");
+            //            double addNum1 = double.Parse(Console.ReadLine());
 
-                        Console.WriteLine("Enter second number: ");
-                        double addNum2 = double.Parse(Console.ReadLine());
+            //            Console.WriteLine("Enter second number: ");
+            //            double addNum2 = double.Parse(Console.ReadLine());
 
-                        addResult = AddNumbers(addNum1, addNum2);
+            //            addResult = AddNumbers(addNum1, addNum2);
 
-                        Console.WriteLine("Addition = " + addResult);
+            //            Console.WriteLine("Addition = " + addResult);
 
-                        break;
+            //            break;
 
-                    case 2:
-                        Console.WriteLine("You choosed Subtraction.");
+            //        case 2:
+            //            Console.WriteLine("You choosed Subtraction.");
 
-                        Console.WriteLine("Enter first number: ");
-                        double subNum1 = double.Parse(Console.ReadLine());
+            //            Console.WriteLine("Enter first number: ");
+            //            double subNum1 = double.Parse(Console.ReadLine());
 
-                        Console.WriteLine("Enter second number: ");
-                        double subNum2 = double.Parse(Console.ReadLine());
+            //            Console.WriteLine("Enter second number: ");
+            //            double subNum2 = double.Parse(Console.ReadLine());
 
-                        subResult = SubNumbers(subNum1, subNum2);
+            //            subResult = SubNumbers(subNum1, subNum2);
 
-                        Console.WriteLine("Subtraction = " + subResult);
+            //            Console.WriteLine("Subtraction = " + subResult);
 
-                        break;
+            //            break;
 
-                    case 3:
-                        Console.WriteLine("You choosed Multiplication.");
+            //        case 3:
+            //            Console.WriteLine("You choosed Multiplication.");
 
-                        Console.WriteLine("Enter first number: ");
-                        double mulNum1 = double.Parse(Console.ReadLine());
+            //            Console.WriteLine("Enter first number: ");
+            //            double mulNum1 = double.Parse(Console.ReadLine());
 
-                        Console.WriteLine("Enter second number: ");
-                        double mulNum2 = double.Parse(Console.ReadLine());
+            //            Console.WriteLine("Enter second number: ");
+            //            double mulNum2 = double.Parse(Console.ReadLine());
 
-                        mulResult = MultiplyNumbers(mulNum1, mulNum2);
+            //            mulResult = MultiplyNumbers(mulNum1, mulNum2);
 
-                        Console.WriteLine("Multiplication = " + mulResult);
+            //            Console.WriteLine("Multiplication = " + mulResult);
 
-                        break;
+            //            break;
 
-                    case 4:
-                        Console.WriteLine("You choosed Divition.");
+            //        case 4:
+            //            Console.WriteLine("You choosed Divition.");
 
-                        Console.WriteLine("Enter first number: ");
-                        double divNum1 = double.Parse(Console.ReadLine());
+            //            Console.WriteLine("Enter first number: ");
+            //            double divNum1 = double.Parse(Console.ReadLine());
 
-                        Console.WriteLine("Enter second number: ");
-                        double divNum2 = double.Parse(Console.ReadLine());
+            //            Console.WriteLine("Enter second number: ");
+            //            double divNum2 = double.Parse(Console.ReadLine());
 
-                        divResult = DivideNumbers(divNum1, divNum2);
+            //            divResult = DivideNumbers(divNum1, divNum2);
 
-                        Console.WriteLine("Divition = " + divResult);
+            //            Console.WriteLine("Divition = " + divResult);
 
-                        break;
+            //            break;
 
-                    default:
-                        Console.WriteLine("Invalid option!");
+            //        default:
+            //            Console.WriteLine("Invalid option!");
                         
-                        break;
-                }
+            //            break;
+            //    }
 
-                Console.WriteLine("Do you want to exit?");
-                string exitDecision = Console.ReadLine();
+            //    Console.WriteLine("Do you want to exit?");
+            //    string exitDecision = Console.ReadLine();
 
-                if (exitDecision == "yes")
-                {
-                    exit = false;
-                }
-                else
-                {
-                    exit = true;
-                }
-            }
-            while (exit);
+            //    if (exitDecision == "yes")
+            //    {
+            //        exit = false;
+            //    }
+            //    else
+            //    {
+            //        exit = true;
+            //    }
+            //}
+            //while (exit);
+
+            /////////////////////////////////////////////////////////
+            ///
+
+
+            // Task 12: Student Report Card Generator
+
+            double averageGrade;
+            string gradeLetter;
+
+            Console.WriteLine("Enter Student name: ");
+            string studentName = Console.ReadLine();
+
+            Console.WriteLine("Enter Math score: ");
+            double mathGrade = double.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter English score: ");
+            double englishGrade = double.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter Physics score: ");
+            double physicsGrade = double.Parse(Console.ReadLine());
+
+            averageGrade = CalculateAverage(mathGrade, englishGrade, physicsGrade);
+
+            gradeLetter = GetGradeLetter(averageGrade);
+
+            PrintReportCard(studentName, averageGrade, gradeLetter);
+
+
+
+
 
         }
     }
