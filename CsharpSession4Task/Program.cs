@@ -112,6 +112,21 @@
             return num1 * num2 * num3;
         }
 
+        public static double CalculateArea(double side)
+        {
+            double Area;
+
+            Area = side * side;
+
+            return Area;
+        }
+
+        public static double CalculateArea(double length, double width)
+        {
+            double Area = length * width;
+
+            return Area;
+        }
 
         static void Main(string[] args)
         {
@@ -244,38 +259,86 @@
 
             // Task 9: Overloaded Multiply Function
 
-            int result1;
-            double result2;
-            int result3;
+            //int result1;
+            //double result2;
+            //int result3;
 
-            Console.WriteLine("Enter first integer number: ");
-            int num1 = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter first integer number: ");
+            //int num1 = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Enter second integer number: ");
-            int num2 = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter second integer number: ");
+            //int num2 = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Enter third integer number: ");
-            int num3 = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter third integer number: ");
+            //int num3 = int.Parse(Console.ReadLine());
 
-            result1 = Multiply(num1, num2);
+            //result1 = Multiply(num1, num2);
 
-            result3 = Multiply(num1, num2, num3);
-
-
-            Console.WriteLine("Enter first double number: ");
-            double Dobnum1 = double.Parse(Console.ReadLine());
-
-            Console.WriteLine("Enter second double number: ");
-            double Dobnum2 = double.Parse(Console.ReadLine());
-
-            result2 = Multiply(Dobnum1, Dobnum2);
+            //result3 = Multiply(num1, num2, num3);
 
 
-            Console.WriteLine("Result takes two integers: " + result1);
+            //Console.WriteLine("Enter first double number: ");
+            //double Dobnum1 = double.Parse(Console.ReadLine());
 
-            Console.WriteLine("Result takes two double: " + result2);
+            //Console.WriteLine("Enter second double number: ");
+            //double Dobnum2 = double.Parse(Console.ReadLine());
 
-            Console.WriteLine("Result takes three integers: " + result3);
+            //result2 = Multiply(Dobnum1, Dobnum2);
+
+
+            //Console.WriteLine("Result takes two integers: " + result1);
+
+            //Console.WriteLine("Result takes two double: " + result2);
+
+            //Console.WriteLine("Result takes three integers: " + result3);
+
+            /////////////////////////////////////////////////////////
+            ///
+
+
+            // Task 10: Overloaded Area Calculator
+
+            double AreaOfSquare;
+            double AreaOfRectangle;
+
+            Console.WriteLine("Choose which shape do you want to calculate its Area: ");
+            Console.WriteLine("1. Square");
+            Console.WriteLine("2. Rectangle");
+            int userChoise = int.Parse(Console.ReadLine());
+
+            switch (userChoise)
+            {
+                case 1:
+                    Console.WriteLine("You choosed Square.");
+
+                    Console.WriteLine("Enter the side of square: ");
+                    double side = double.Parse(Console.ReadLine());
+
+                    AreaOfSquare = CalculateArea(side);
+
+                    Console.WriteLine("The area of square is: " + AreaOfSquare);
+
+                    break;
+
+                case 2:
+                    Console.WriteLine("You choosed Rectangle.");
+
+                    Console.WriteLine("Enter the length of rectangle: ");
+                    double length = double.Parse(Console.ReadLine());
+
+                    Console.WriteLine("Enter the width of rectangle: ");
+                    double width = double.Parse(Console.ReadLine());
+
+                    AreaOfRectangle = CalculateArea(length, width);
+
+                    Console.WriteLine("The area of rctangle is: " + AreaOfRectangle);
+
+                    break;
+
+                default:
+                    Console.WriteLine("Invalid choise!");
+                    break;
+            }
 
 
 
