@@ -89,6 +89,14 @@
             }
         }
 
+        public static void CountDown(int number)
+        {
+            for (int i = number; i >= 1; i--)
+            {
+                Console.WriteLine(i);
+            }
+        }
+
         static void Main(string[] args)
         {
 
@@ -194,17 +202,25 @@
 
             // Task 7: Grade Letter Function
 
-            string FinalGrade;
+            //string FinalGrade;
 
-            Console.WriteLine("Enter your grade to classify it: ");
-            int Grade = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter your grade to classify it: ");
+            //int Grade = int.Parse(Console.ReadLine());
 
-            FinalGrade = GetGradeLetter(Grade);
+            //FinalGrade = GetGradeLetter(Grade);
 
-            Console.WriteLine("Your Grade is: " + FinalGrade);
+            //Console.WriteLine("Your Grade is: " + FinalGrade);
+
+            /////////////////////////////////////////////////////////
+            ///
 
 
+            // Task 8: Countdown Function
 
+            Console.WriteLine("Enter a number to start countdown from: ");
+            int number = int.Parse(Console.ReadLine());
+
+            CountDown(number);
 
 
         }
