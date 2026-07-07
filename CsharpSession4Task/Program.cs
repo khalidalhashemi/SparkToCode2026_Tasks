@@ -26,6 +26,14 @@
             return Fahrenheit;
         }
 
+        public static void MenuDisplay()
+        {
+            Console.WriteLine("Main Menu: ");
+            Console.WriteLine("1. Start");
+            Console.WriteLine("2. Help");
+            Console.WriteLine("3. Exit");
+        }
+
         static void Main(string[] args)
         {
 
@@ -57,14 +65,25 @@
 
             // Task 3: Celsius to Fahrenheit Function
 
-            double Fahrenheit;
+            //double Fahrenheit;
 
-            Console.WriteLine("Enter temperature in Celsius to converte it to Fahrenheit: ");
-            double Celsius = double.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter temperature in Celsius to converte it to Fahrenheit: ");
+            //double Celsius = double.Parse(Console.ReadLine());
 
-            Fahrenheit = TempConversion(Celsius);
+            //Fahrenheit = TempConversion(Celsius);
 
-            Console.WriteLine("Tempareture in Fahrenheit: " + Fahrenheit + " F");
+            //Console.WriteLine("Tempareture in Fahrenheit: " + Fahrenheit + " F");
+
+            /////////////////////////////////////////////////////////
+            ///
+
+
+            // Task 4: Fixed Menu Display Function
+
+            Console.WriteLine("Here is the menu: ");
+            MenuDisplay();
+
+
 
 
         }
