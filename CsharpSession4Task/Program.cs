@@ -97,6 +97,22 @@
             }
         }
 
+        public static int Multiply(int num1, int num2)
+        {
+            return num1 * num2;
+        }
+
+        public static double Multiply(double num1, double num2)
+        {
+            return num1 * num2;
+        }
+
+        public static int Multiply(int num1, int num2, int num3)
+        {
+            return num1 * num2 * num3;
+        }
+
+
         static void Main(string[] args)
         {
 
@@ -217,10 +233,50 @@
 
             // Task 8: Countdown Function
 
-            Console.WriteLine("Enter a number to start countdown from: ");
-            int number = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter a number to start countdown from: ");
+            //int number = int.Parse(Console.ReadLine());
 
-            CountDown(number);
+            //CountDown(number);
+
+            /////////////////////////////////////////////////////////
+            ///
+
+
+            // Task 9: Overloaded Multiply Function
+
+            int result1;
+            double result2;
+            int result3;
+
+            Console.WriteLine("Enter first integer number: ");
+            int num1 = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter second integer number: ");
+            int num2 = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter third integer number: ");
+            int num3 = int.Parse(Console.ReadLine());
+
+            result1 = Multiply(num1, num2);
+
+            result3 = Multiply(num1, num2, num3);
+
+
+            Console.WriteLine("Enter first double number: ");
+            double Dobnum1 = double.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter second double number: ");
+            double Dobnum2 = double.Parse(Console.ReadLine());
+
+            result2 = Multiply(Dobnum1, Dobnum2);
+
+
+            Console.WriteLine("Result takes two integers: " + result1);
+
+            Console.WriteLine("Result takes two double: " + result2);
+
+            Console.WriteLine("Result takes three integers: " + result3);
+
 
 
         }
