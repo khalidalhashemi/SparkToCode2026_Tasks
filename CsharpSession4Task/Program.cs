@@ -46,6 +46,24 @@
             }
         }
 
+        public static double RectArea(double length, double width)
+        {
+            double Area;
+
+            Area = length * width;
+
+            return Area;
+        }
+
+        public static double RectPerimeter(double length, double width)
+        {
+            double Perimeter;
+
+            Perimeter = 2 * (length + width);
+
+            return Perimeter;
+        }
+
         static void Main(string[] args)
         {
 
@@ -101,21 +119,49 @@
 
             // Task 5: Even or Odd Function  
 
-            Console.WriteLine("Enter a number to check if it is Odd or Even: ");
-            int number = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter a number to check if it is Odd or Even: ");
+            //int number = int.Parse(Console.ReadLine());
 
-            bool result = isEven(number);
+            //bool result = isEven(number);
 
-            if (result == true)
-            {
-                Console.WriteLine("Even.");
-            }
-            else
-            {
-                Console.WriteLine("Odd.");
-            }
+            //if (result == true)
+            //{
+            //    Console.WriteLine("Even.");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Odd.");
+            //}
+
+            /////////////////////////////////////////////////////////
+            ///
 
 
+            // Task 6: Rectangle Area & Perimeter Functions
+
+            double Area;
+            double Perimeter;
+
+            Console.WriteLine("Enter length of Rectagle to calculate Area: ");
+            double areaLength = double.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter width of Rectagle to calculate Area: ");
+            double areaWidth = double.Parse(Console.ReadLine());
+
+            Area = RectArea(areaLength, areaWidth);
+
+            Console.WriteLine("The Area of Rectangle is: " + Area);
+
+
+            Console.WriteLine("Enter length of Rectagle to calculate Perimeter: ");
+            double perimeterLength = double.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter width of Rectagle to calculate Perimeter: ");
+            double perimeterWidth = double.Parse(Console.ReadLine());
+
+            Perimeter = RectPerimeter(perimeterLength, perimeterWidth);
+
+            Console.WriteLine("The Perimeter of Rectangle is :" + Perimeter);
 
 
 
