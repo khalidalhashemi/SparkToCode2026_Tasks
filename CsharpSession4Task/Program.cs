@@ -8,13 +8,22 @@
         //    Console.WriteLine("Welcome to Csharp Program " + name);
         //}
 
-        public static int Square(int number)
+        //public static int Square(int number)
+        //{
+        //    int result;
+
+        //    result = (int)Math.Sqrt(number);
+
+        //    return  result;
+        //}
+
+        public static double TempConversion(double Celsius)
         {
-            int result;
+            double Fahrenheit;
 
-            result = (int)Math.Sqrt(number);
+            Fahrenheit = (Celsius * 9 / 5) + 32;
 
-            return  result;
+            return Fahrenheit;
         }
 
         static void Main(string[] args)
@@ -33,15 +42,29 @@
 
             // Task 2: Square Number Function
 
-            Console.WriteLine("Enter a number: ");
-            int number = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter a number: ");
+            //int number = int.Parse(Console.ReadLine());
 
-            int result;
+            //int result;
 
-            result = Square(number);
+            //result = Square(number);
 
-            Console.WriteLine("Your result: " + result);
+            //Console.WriteLine("Your result: " + result);
 
+            /////////////////////////////////////////////////////////
+            ///
+
+
+            // Task 3: Celsius to Fahrenheit Function
+
+            double Fahrenheit;
+
+            Console.WriteLine("Enter temperature in Celsius to converte it to Fahrenheit: ");
+            double Celsius = double.Parse(Console.ReadLine());
+
+            Fahrenheit = TempConversion(Celsius);
+
+            Console.WriteLine("Tempareture in Fahrenheit: " + Fahrenheit + " F");
 
 
         }
