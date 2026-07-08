@@ -91,32 +91,63 @@
 
             // Task 4: Customer Service Queue
 
-            Console.WriteLine("Enter first customer name: ");
-            string customer1 = Console.ReadLine();
+            //Console.WriteLine("Enter first customer name: ");
+            //string customer1 = Console.ReadLine();
 
-            Console.WriteLine("Enter second customer name: ");
-            string customer2 = Console.ReadLine();
+            //Console.WriteLine("Enter second customer name: ");
+            //string customer2 = Console.ReadLine();
 
-            Console.WriteLine("Enter third customer name: ");
-            string customer3 = Console.ReadLine();
-
-
-            Queue<string> customerNumber = new Queue<string>();
-            customerNumber.Enqueue(customer1);
-            customerNumber.Enqueue(customer2);
-            customerNumber.Enqueue(customer3);
+            //Console.WriteLine("Enter third customer name: ");
+            //string customer3 = Console.ReadLine();
 
 
-            string firstCustomer = customerNumber.Peek();
+            //Queue<string> customerNumber = new Queue<string>();
+            //customerNumber.Enqueue(customer1);
+            //customerNumber.Enqueue(customer2);
+            //customerNumber.Enqueue(customer3);
 
-            string firstCustomerOut = customerNumber.Dequeue();
 
-            Console.WriteLine("Customer service queue: ");
+            //string firstCustomer = customerNumber.Peek();
 
-            foreach (string service in customerNumber)
+            //string firstCustomerOut = customerNumber.Dequeue();
+
+            //Console.WriteLine("Customer service queue: ");
+
+            //foreach (string service in customerNumber)
+            //{
+            //    Console.WriteLine(service);
+            //}
+
+            //////////////////////////////////////////////////////////////
+            ///
+
+
+            // Task 5: Array Grade Range:
+
+            int[] studentGrade = new int[5];
+            studentGrade[0] = 0;
+            studentGrade[1] = 0;
+            studentGrade[2] = 0;
+            studentGrade[3] = 0;
+            studentGrade[4] = 0;
+
+            for (int i = 0; i < 5; i++)
             {
-                Console.WriteLine(service);
+                Console.WriteLine("Enter your grades: ");
+                int grades = int.Parse(Console.ReadLine());
+
+                studentGrade[i] = grades;
+
             }
+
+            Array.Sort(studentGrade);
+
+            Console.WriteLine("Your Grades Sorts: ");
+            Console.WriteLine(string.Join(", ", studentGrade));
+
+            double averageGrade = studentGrade.Average();
+            Console.WriteLine("Your grades average: " +  averageGrade);
+
 
 
 
