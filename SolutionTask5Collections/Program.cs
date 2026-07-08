@@ -57,39 +57,66 @@
 
             // Task 3: Browsing History Stack
 
-            string show;
-            string history;
+            //string show;
+            //string history;
 
-            Console.WriteLine("Enter first website: ");
-            string url1 = Console.ReadLine();
+            //Console.WriteLine("Enter first website: ");
+            //string url1 = Console.ReadLine();
 
-            Console.WriteLine("Enter second website: ");
-            string url2 = Console.ReadLine();
+            //Console.WriteLine("Enter second website: ");
+            //string url2 = Console.ReadLine();
 
-            Console.WriteLine("Enter third website: ");
-            string url3 = Console.ReadLine();
+            //Console.WriteLine("Enter third website: ");
+            //string url3 = Console.ReadLine();
 
-            Stack<string> browserHistory = new Stack<string>();
-            browserHistory.Push(url1);
-            browserHistory.Push(url2);
-            browserHistory.Push(url3);
+            //Stack<string> browserHistory = new Stack<string>();
+            //browserHistory.Push(url1);
+            //browserHistory.Push(url2);
+            //browserHistory.Push(url3);
 
-            show = browserHistory.Peek();
+            //show = browserHistory.Peek();
 
-            history = browserHistory.Pop();
+            //history = browserHistory.Pop();
 
-            Console.WriteLine("Your browsing history: ");
+            //Console.WriteLine("Your browsing history: ");
 
-            foreach (string url in browserHistory)
-            {
-                Console.WriteLine(url);
-            }
+            //foreach (string url in browserHistory)
+            //{
+            //    Console.WriteLine(url);
+            //}
 
             //////////////////////////////////////////////////////////////
             ///
 
 
-   
+            // Task 4: Customer Service Queue
+
+            Console.WriteLine("Enter first customer name: ");
+            string customer1 = Console.ReadLine();
+
+            Console.WriteLine("Enter second customer name: ");
+            string customer2 = Console.ReadLine();
+
+            Console.WriteLine("Enter third customer name: ");
+            string customer3 = Console.ReadLine();
+
+
+            Queue<string> customerNumber = new Queue<string>();
+            customerNumber.Enqueue(customer1);
+            customerNumber.Enqueue(customer2);
+            customerNumber.Enqueue(customer3);
+
+
+            string firstCustomer = customerNumber.Peek();
+
+            string firstCustomerOut = customerNumber.Dequeue();
+
+            Console.WriteLine("Customer service queue: ");
+
+            foreach (string service in customerNumber)
+            {
+                Console.WriteLine(service);
+            }
 
 
 
