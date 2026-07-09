@@ -209,53 +209,94 @@ namespace SolutionTask5Collections
 
             // Task 7: High Score Podium
 
-            Console.WriteLine("Enter game score 1:");
-            int score1 = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter game score 1:");
+            //int score1 = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Enter game score 2:");
-            int score2 = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter game score 2:");
+            //int score2 = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Enter game score 3:");
-            int score3 = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter game score 3:");
+            //int score3 = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Enter game score 4:");
-            int score4 = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter game score 4:");
+            //int score4 = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Enter game score 5:");
-            int score5 = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter game score 5:");
+            //int score5 = int.Parse(Console.ReadLine());
 
-            List<int> gameScore = new List<int>();
-            gameScore.Add(score1);
-            gameScore.Add(score2);
-            gameScore.Add(score3);
-            gameScore.Add(score4);
-            gameScore.Add(score5);
+            //List<int> gameScore = new List<int>();
+            //gameScore.Add(score1);
+            //gameScore.Add(score2);
+            //gameScore.Add(score3);
+            //gameScore.Add(score4);
+            //gameScore.Add(score5);
 
-            gameScore.Sort();
+            //gameScore.Sort();
 
-            gameScore.Reverse();
+            //gameScore.Reverse();
 
-            foreach (int place in gameScore)
-            {
-                Console.WriteLine(place);
-            }
+            //foreach (int place in gameScore)
+            //{
+            //    Console.WriteLine(place);
+            //}
 
 
-            int firstplace = gameScore[0];
+            //int firstplace = gameScore[0];
 
-            int secondplace = gameScore[1];
+            //int secondplace = gameScore[1];
 
-            int thirdplace = gameScore[2];
+            //int thirdplace = gameScore[2];
 
-            Console.WriteLine("1st place: " + firstplace);
-            Console.WriteLine("2nd place: " + secondplace);
-            Console.WriteLine("3rd place: " + thirdplace);
+            //Console.WriteLine("1st place: " + firstplace);
+            //Console.WriteLine("2nd place: " + secondplace);
+            //Console.WriteLine("3rd place: " + thirdplace);
 
             //////////////////////////////////////////////////////////////
             ///
 
 
             // Task 8: Undo Last Action
+
+            bool Exit = false;
+
+            Stack<string> actionTrack = new Stack<string>();
+
+            while (Exit == false)
+            {
+                Console.WriteLine("Type an action: ");
+                string action = Console.ReadLine();
+
+                if (action == "stop")
+                {
+                    Console.WriteLine("write undo to move back: ");
+                    string removeAction = Console.ReadLine();
+
+                    if (removeAction == "undo")
+                    {
+                        actionTrack.Pop();
+
+                        Exit = true;
+
+                    }
+                    else
+                    {
+                        Exit = true;
+                    }
+
+                }
+                else
+                {
+                    actionTrack.Push(action);
+                }
+
+            }
+
+            int show = actionTrack.Count;
+
+            foreach (string action in actionTrack)
+            {
+                Console.WriteLine(action);
+            }
 
 
 
