@@ -1,4 +1,6 @@
-﻿namespace SolutionTask5Collections
+﻿using System.Transactions;
+
+namespace SolutionTask5Collections
 {
     internal class Program
     {
@@ -154,52 +156,105 @@
 
             // Task 6: Filtered Shopping List
 
-            bool Exit = false;
-            string item;
+            //bool Exit = false;
+            //string item;
 
-            List<string> shoppingList = new List<string>();
+            //List<string> shoppingList = new List<string>();
 
-            while (Exit == false)
+            //while (Exit == false)
+            //{
+            //    Console.WriteLine("Add item to the list: ");
+            //    item = Console.ReadLine();
+
+
+            //    if (item == "done")
+            //    {
+            //        Console.WriteLine("Do you whant to remove an item? (true/false)");
+            //        bool removeItem = bool.Parse(Console.ReadLine());
+
+            //        if (removeItem == true)
+            //        {
+            //            Console.WriteLine("Enter the item you want to remove: ");
+            //            item = Console.ReadLine();
+
+            //            shoppingList.Remove(item);
+
+            //            Exit = true;
+            //        }
+            //        else
+            //        {
+            //            Exit = true;
+            //        }
+
+
+            //    }
+            //    else
+            //    {
+            //        shoppingList.Add(item);
+            //    }
+
+
+            //}
+
+            //Console.WriteLine("Your shopping cart has: " +  shoppingList.Count + " items.");
+
+            //foreach (string shoppingCart in shoppingList)
+            //{
+            //    Console.WriteLine(shoppingCart);
+            //}
+
+            //////////////////////////////////////////////////////////////
+            ///
+
+
+            // Task 7: igh Score Podium
+
+            Console.WriteLine("Enter game score 1:");
+            int score1 = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter game score 2:");
+            int score2 = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter game score 3:");
+            int score3 = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter game score 4:");
+            int score4 = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter game score 5:");
+            int score5 = int.Parse(Console.ReadLine());
+
+            List<int> gameScore = new List<int>();
+            gameScore.Add(score1);
+            gameScore.Add(score2);
+            gameScore.Add(score3);
+            gameScore.Add(score4);
+            gameScore.Add(score5);
+
+            gameScore.Sort();
+
+            gameScore.Reverse();
+
+            int[] places = gameScore.ToArray();
+
+            int firstPlace = Array.IndexOf(places, 0);
+
+            int secondPlace = Array.IndexOf(places, 1);
+
+            int thirdPlace = Array.IndexOf(places, 2);
+
+            foreach (int place in gameScore)
             {
-                Console.WriteLine("Add item to the list: ");
-                item = Console.ReadLine();
-
-
-                if (item == "done")
-                {
-                    Console.WriteLine("Do you whant to remove an item? (true/false)");
-                    bool removeItem = bool.Parse(Console.ReadLine());
-
-                    if (removeItem == true)
-                    {
-                        Console.WriteLine("Enter the item you want to remove: ");
-                        item = Console.ReadLine();
-
-                        shoppingList.Remove(item);
-
-                        Exit = true;
-                    }
-                    else
-                    {
-                        Exit = true;
-                    }
-
-
-                }
-                else
-                {
-                    shoppingList.Add(item);
-                }
-
-
+                Console.WriteLine(place);
             }
 
-            Console.WriteLine("Your shopping cart has: " +  shoppingList.Count + " items.");
 
-            foreach (string shoppingCart in shoppingList)
-            {
-                Console.WriteLine(shoppingCart);
-            }
+            Console.WriteLine("1st place: " + firstPlace);
+
+            Console.WriteLine("2nd place: " + secondPlace);
+
+            Console.WriteLine("3rd place: " + thirdPlace);
+
 
         }
     }
