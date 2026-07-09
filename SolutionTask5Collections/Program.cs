@@ -207,7 +207,7 @@ namespace SolutionTask5Collections
             ///
 
 
-            // Task 7: igh Score Podium
+            // Task 7: High Score Podium
 
             Console.WriteLine("Enter game score 1:");
             int score1 = int.Parse(Console.ReadLine());
@@ -235,25 +235,28 @@ namespace SolutionTask5Collections
 
             gameScore.Reverse();
 
-            int[] places = gameScore.ToArray();
-
-            int firstPlace = Array.IndexOf(places, 0);
-
-            int secondPlace = Array.IndexOf(places, 1);
-
-            int thirdPlace = Array.IndexOf(places, 2);
-
             foreach (int place in gameScore)
             {
                 Console.WriteLine(place);
             }
 
 
-            Console.WriteLine("1st place: " + firstPlace);
+            int firstplace = gameScore[0];
 
-            Console.WriteLine("2nd place: " + secondPlace);
+            int secondplace = gameScore[1];
 
-            Console.WriteLine("3rd place: " + thirdPlace);
+            int thirdplace = gameScore[2];
+
+            Console.WriteLine("1st place: " + firstplace);
+            Console.WriteLine("2nd place: " + secondplace);
+            Console.WriteLine("3rd place: " + thirdplace);
+
+            //////////////////////////////////////////////////////////////
+            ///
+
+
+            // Task 8: Undo Last Action
+
 
 
         }
