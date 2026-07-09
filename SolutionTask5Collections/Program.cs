@@ -1,4 +1,6 @@
-﻿namespace SolutionTask5Collections
+﻿using System.Transactions;
+
+namespace SolutionTask5Collections
 {
     internal class Program
     {
@@ -154,52 +156,149 @@
 
             // Task 6: Filtered Shopping List
 
-            bool Exit = false;
-            string item;
+            //bool Exit = false;
+            //string item;
 
-            List<string> shoppingList = new List<string>();
+            //List<string> shoppingList = new List<string>();
+
+            //while (Exit == false)
+            //{
+            //    Console.WriteLine("Add item to the list: ");
+            //    item = Console.ReadLine();
+
+
+            //    if (item == "done")
+            //    {
+            //        Console.WriteLine("Do you whant to remove an item? (true/false)");
+            //        bool removeItem = bool.Parse(Console.ReadLine());
+
+            //        if (removeItem == true)
+            //        {
+            //            Console.WriteLine("Enter the item you want to remove: ");
+            //            item = Console.ReadLine();
+
+            //            shoppingList.Remove(item);
+
+            //            Exit = true;
+            //        }
+            //        else
+            //        {
+            //            Exit = true;
+            //        }
+
+
+            //    }
+            //    else
+            //    {
+            //        shoppingList.Add(item);
+            //    }
+
+
+            //}
+
+            //Console.WriteLine("Your shopping cart has: " +  shoppingList.Count + " items.");
+
+            //foreach (string shoppingCart in shoppingList)
+            //{
+            //    Console.WriteLine(shoppingCart);
+            //}
+
+            //////////////////////////////////////////////////////////////
+            ///
+
+
+            // Task 7: High Score Podium
+
+            //Console.WriteLine("Enter game score 1:");
+            //int score1 = int.Parse(Console.ReadLine());
+
+            //Console.WriteLine("Enter game score 2:");
+            //int score2 = int.Parse(Console.ReadLine());
+
+            //Console.WriteLine("Enter game score 3:");
+            //int score3 = int.Parse(Console.ReadLine());
+
+            //Console.WriteLine("Enter game score 4:");
+            //int score4 = int.Parse(Console.ReadLine());
+
+            //Console.WriteLine("Enter game score 5:");
+            //int score5 = int.Parse(Console.ReadLine());
+
+            //List<int> gameScore = new List<int>();
+            //gameScore.Add(score1);
+            //gameScore.Add(score2);
+            //gameScore.Add(score3);
+            //gameScore.Add(score4);
+            //gameScore.Add(score5);
+
+            //gameScore.Sort();
+
+            //gameScore.Reverse();
+
+            //foreach (int place in gameScore)
+            //{
+            //    Console.WriteLine(place);
+            //}
+
+
+            //int firstplace = gameScore[0];
+
+            //int secondplace = gameScore[1];
+
+            //int thirdplace = gameScore[2];
+
+            //Console.WriteLine("1st place: " + firstplace);
+            //Console.WriteLine("2nd place: " + secondplace);
+            //Console.WriteLine("3rd place: " + thirdplace);
+
+            //////////////////////////////////////////////////////////////
+            ///
+
+
+            // Task 8: Undo Last Action
+
+            bool Exit = false;
+
+            Stack<string> actionTrack = new Stack<string>();
 
             while (Exit == false)
             {
-                Console.WriteLine("Add item to the list: ");
-                item = Console.ReadLine();
+                Console.WriteLine("Type an action: ");
+                string action = Console.ReadLine();
 
-
-                if (item == "done")
+                if (action == "stop")
                 {
-                    Console.WriteLine("Do you whant to remove an item? (true/false)");
-                    bool removeItem = bool.Parse(Console.ReadLine());
+                    Console.WriteLine("write undo to move back: ");
+                    string removeAction = Console.ReadLine();
 
-                    if (removeItem == true)
+                    if (removeAction == "undo")
                     {
-                        Console.WriteLine("Enter the item you want to remove: ");
-                        item = Console.ReadLine();
-
-                        shoppingList.Remove(item);
+                        actionTrack.Pop();
 
                         Exit = true;
+
                     }
                     else
                     {
                         Exit = true;
                     }
 
-
                 }
                 else
                 {
-                    shoppingList.Add(item);
+                    actionTrack.Push(action);
                 }
 
-
             }
 
-            Console.WriteLine("Your shopping cart has: " +  shoppingList.Count + " items.");
+            int show = actionTrack.Count;
 
-            foreach (string shoppingCart in shoppingList)
+            foreach (string action in actionTrack)
             {
-                Console.WriteLine(shoppingCart);
+                Console.WriteLine(action);
             }
+
+
 
         }
     }
