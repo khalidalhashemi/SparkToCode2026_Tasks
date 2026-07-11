@@ -29,37 +29,28 @@ namespace MiniCompoundProject
 
                 double depositAmount;
 
-                Console.WriteLine("Enter your account number: ");
-                accountNumber = Console.ReadLine();
-
                 int index = accountNumbers.IndexOf(accountNumber);
 
-                if (index == -1)
-                {
-                    Console.WriteLine("Account not found!");
-                }
-                else
-                {
                     Console.WriteLine("Enter deposit amount: ");
                     depositAmount = double.Parse(Console.ReadLine());
 
-                    if (depositAmount < 0)
+                    if (depositAmount <= 0)
                     {
                         Console.WriteLine("Invalid amount.");
                     }
                     else
                     {
-                        balance[0] = depositAmount;
+
+                        Console.WriteLine("Your initial deposit done successfully!");
 
                         currentBalance = depositAmount;
+                        customerNames.Add(customerName);
+                        accountNumbers.Add(accountNumber);
+                        balance.Add(currentBalance);
+
                     }
-
-                }
+                    
             }
-
-            customerNames.Add(customerName);
-            accountNumbers.Add(accountNumber);
-            balance.Add(currentBalance);
 
         }
 
@@ -92,15 +83,13 @@ namespace MiniCompoundProject
                 }
                 else
                 {
-                    balance[0] = depositAmount;
+                    balance[index] += depositAmount;
 
                     currentBalance = depositAmount;
 
-                    balance.Add(currentBalance);
+                    Console.WriteLine("Your current balance: " + balance[index]);
 
                 }
-
-                Console.WriteLine("Your balance: " + balance[0]);
 
             }
 
@@ -129,14 +118,15 @@ namespace MiniCompoundProject
                 Console.WriteLine("Enter withdraw amount: ");
                 withdrawAmount = double.Parse(Console.ReadLine());
 
-                if (withdrawAmount < 0)
+                if (withdrawAmount <= 0  || withdrawAmount > balance[index])
                 {
                     Console.WriteLine("You don't have enugh balance.");
                 }
                 else
                 {
-                    balance[0] -= withdrawAmount;
-                    Console.WriteLine("Your balance: " + balance[0]);
+                    balance[index] -= withdrawAmount;
+                    Console.WriteLine("Withdraw success!");
+                    Console.WriteLine("Your current balance: " + balance[index]);
                 }
 
             }
@@ -149,8 +139,6 @@ namespace MiniCompoundProject
         {
 
             string accountNumber;
-            double withdrawAmount;
-            double currentBalance;
 
             Console.WriteLine("Enter your account number: ");
             accountNumber = Console.ReadLine();
@@ -163,9 +151,13 @@ namespace MiniCompoundProject
             }
             else
             {
-                customerNames[0].Count();
-                accountNumbers[0].Count();
-                Console.WriteLine("Your balance: " + balance[0]);
+                Console.WriteLine("Your info: ");
+
+                Console.WriteLine(customerNames[index]);
+                Console.WriteLine(accountNumbers[index]);
+                Console.WriteLine(balance[index]);
+
+                Console.WriteLine("Your current balance " + balance[index] + " OMR ");
 
             }
 
@@ -180,12 +172,15 @@ namespace MiniCompoundProject
             double transferAmount;
             double currentBalance;
 
-            Console.WriteLine("Enter your account number: ");
-            accountNumber = Console.ReadLine();
+            string senderAccount;
+            string receiverAccount;
 
-            int index = accountNumbers.IndexOf(accountNumber);
+            Console.WriteLine("Enter sender account number: ");
+            senderAccount = Console.ReadLine();
 
-            if (index == -1)
+            int senderIndex = accountNumbers.IndexOf(senderAccount);
+
+            if (senderIndex == -1)
             {
                 Console.WriteLine("account not found!");
             }
@@ -193,11 +188,11 @@ namespace MiniCompoundProject
             {
 
                 Console.WriteLine("Enter receiver account number: ");
-                accountNumber = Console.ReadLine();
+                receiverAccount = Console.ReadLine();
 
-                index = accountNumbers.IndexOf(accountNumber);
+                int receiverIndex = accountNumbers.IndexOf(receiverAccount);
 
-                if (index == -1)
+                if (receiverIndex == -1)
                 {
                     Console.WriteLine("account not found!");
                 }
@@ -206,16 +201,18 @@ namespace MiniCompoundProject
                     Console.WriteLine("Enter amount to transfer: ");
                     transferAmount = double.Parse(Console.ReadLine());
 
-                    if (transferAmount < 0)
+                    if (transferAmount <= 0  || transferAmount > balance[senderIndex])
                     {
                         Console.WriteLine("You don't have enough money.");
                     }
                     else
                     {
-                        balance[0] -= transferAmount;
-                        balance[1] += transferAmount;
 
-                        Console.WriteLine("Your balance: " + balance[0]);
+                        balance[senderIndex] -= transferAmount;
+                        balance[receiverIndex] += transferAmount;
+
+                        Console.WriteLine("Transfer done successfully!");
+                        Console.WriteLine("Your current balance: " + balance[senderIndex]);
 
                     }
 
@@ -247,7 +244,9 @@ namespace MiniCompoundProject
                 Console.WriteLine("Enter your new account number: ");
                 newAccountNumber = Console.ReadLine();
 
-                newAccountNumber = accountNumbers.Add();
+                accountNumbers[index] = newAccountNumber;
+
+                Console.WriteLine("Your account number has changed successfully from: " + accountNumber + " to " + newAccountNumber);
 
             }
 
@@ -257,14 +256,20 @@ namespace MiniCompoundProject
 
         public static void ListAllAcounts()
         {
-            foreach (string status in customerNames)
+          
+            for (int i = 0; i < customerNames.Count; i++)
             {
-                Console.WriteLine(status);
+                Console.WriteLine(customerNames[i]);
             }
 
-            foreach (string status in accountNumbers)
+            for (int i = 0; i < accountNumbers.Count; i++)
             {
-                Console.WriteLine(status);
+                Console.WriteLine(accountNumbers[i]);
+            }
+
+            for (int i = 0; i < balance.Count; i++)
+            {
+                Console.WriteLine(balance[i]);
             }
 
         }
