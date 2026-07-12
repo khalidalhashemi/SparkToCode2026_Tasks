@@ -193,5 +193,59 @@
         {
             
         }
+
+        // Choose an Account, Student and Producr 
+
+        static BankAccount ChooseAccount()
+        {
+            Console.WriteLine("Choose an account 1 or 2: ");
+            int userInput = int.Parse(Console.ReadLine());
+
+            if (userInput == 1)
+            {
+                return account1;
+            }
+            else
+            {
+                Console.WriteLine("invalid number");
+            }
+            return account2;
+
+        }
+
+        static Student ChooseStudent()
+        {
+            Console.WriteLine("Choose a student 1 or 2: ");
+            int userInput = int.Parse(Console.ReadLine());
+
+            if (userInput == 1)
+            {
+                return student1;
+            }
+            else
+            {
+                return student2;
+            }
+
+        }
+
+        static Product ChooseProduct()
+        {
+            Console.WriteLine("Choose a student 1 or 2: ");
+            int userInput = int.Parse(Console.ReadLine());
+
+            if (userInput == 1)
+            {
+                return product1;
+            }
+            else
+            {
+                return product2;
+            }
+
+        }
+
+        // Main Functions
+
     }
 }
