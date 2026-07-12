@@ -1,4 +1,6 @@
-﻿namespace OppPart1Task
+﻿using System.Security.Principal;
+
+namespace OppPart1Task
 {
 
     public class BankAccount
@@ -246,6 +248,75 @@
         }
 
         // Main Functions
+
+        // Case 1: View Account Details
+
+        static void ViewAccountDetails()
+        {
+            BankAccount chooseAccount = ChooseAccount();
+            double balance = chooseAccount.CheckBalance();
+            Console.WriteLine("Returned balance: " + balance);
+        }
+
+
+
+        // Case 2: Update Student Address
+
+        static void UpdateStudentAddress()
+        {
+            Student chooseStudent = ChooseStudent();
+
+            Console.WriteLine("Update the student address: ");
+            string newStudentAddress = Console.ReadLine();
+
+            chooseStudent.Address = newStudentAddress;
+
+            Console.WriteLine("Address Updated to: " + newStudentAddress);
+        }
+
+
+
+        // Case 3: Make a Deposite
+
+        static void MakeDeposite()
+        {
+            BankAccount chooseAccount = ChooseAccount();
+
+            Console.WriteLine("Enter deposite amount: ");
+            double amount = double.Parse(Console.ReadLine());
+
+            ChooseAccount().Deposite(amount);
+
+            ChooseAccount().CheckBalance();
+        }
+
+
+
+        // Case 4: Make Withdraw
+
+        static void MakeWithdraw()
+        {
+            BankAccount chooseAccount = ChooseAccount();
+
+            Console.WriteLine("Enter withdraw amount: ");
+            double amount = double.Parse(Console.ReadLine());
+
+            ChooseAccount().Withdraw(amount);
+
+            ChooseAccount().CheckBalance();
+        }
+
+
+
+        // Case 5: View Product Details
+
+        static void ViewProductDetails()
+        {
+            Product chooseProduct = ChooseProduct();
+
+            ChooseProduct().GetInventoryValue();
+        }
+
 
     }
 }
