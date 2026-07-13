@@ -527,7 +527,7 @@ namespace OppPart1Task
 
         // Case 13: Bulk Sale With Revenue Calculation
 
-        static void BulkSale()
+        static void BulkSaleWithRevenueCalculation()
         {
             Product userProduct = ChooseProduct();
 
@@ -551,7 +551,60 @@ namespace OppPart1Task
 
 
 
+        // Case 14: Scholarship Eligibility Check
 
+        static void ScholarshipEligibilityCheck()
+        {
+            Console.WriteLine("Choose one student: ");
+            Student userStudent = ChooseStudent();
+
+            Console.WriteLine("Choose one bank account: ");
+            BankAccount userAccount = ChooseAccount();
+
+            if (userStudent.Grade >= 80 && userAccount.Balance >= 100)
+            {
+                Console.WriteLine("Eligible");
+            }
+            else
+            {
+                Console.WriteLine("Inligible");
+
+                if (userStudent.Grade < 80)
+                {
+                    Console.WriteLine("Grade must be 80 or above.");
+                }
+                else if (userAccount.Balance < 100)
+                {
+                    Console.WriteLine("Balance must be 100 or above.");
+                }
+            }
+        }
+
+
+
+        // Case 15: Full Balance Top-Up Flow
+
+        static void FullBalanceTopUpFlow()
+        {
+            BankAccount userAccount = ChooseAccount();
+
+            userAccount.CheckBalance();
+
+            if (userAccount.Balance < 50)
+            {
+                double TopUp = 100 - userAccount.Balance;
+
+                Console.WriteLine("Balance befor Top-Up: " + userAccount.Balance);
+
+                userAccount.Deposite(TopUp);
+
+                Console.WriteLine("Balance after Top-Up: " + userAccount.Balance);
+            } 
+            else if (userAccount.Balance >= 50)
+            {
+                Console.WriteLine("No Top-Up needed.");
+            }
+        }
 
 
 
