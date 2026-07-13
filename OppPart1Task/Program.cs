@@ -1,4 +1,6 @@
-﻿using System.Security.Principal;
+﻿using System.Runtime.CompilerServices;
+using System.Security.Principal;
+using System.Transactions;
 
 namespace OppPart1Task
 {
@@ -384,6 +386,172 @@ namespace OppPart1Task
                 Console.WriteLine("Stock level is Well");
             }
         }
+
+
+
+        // Case 9: Transfer Between Accounts
+
+        static void TransferBetweenAccounts()
+        {
+
+            BankAccount source = null;
+            BankAccount destination = null;
+            
+            Console.WriteLine("Choose the source account (1 or 2) ");
+            int userChoise = int.Parse(Console.ReadLine());
+
+            if (userChoise == 1)
+            {
+                source = account1;
+            }
+            else if (userChoise == 2)
+            {
+                source = account2;
+            }
+            else
+            {
+                Console.WriteLine("Invalid account.");
+            }
+
+            Console.WriteLine("Choose the destination account (1 or 2) ");
+            int userChoise2 = int.Parse(Console.ReadLine());
+
+            if (userChoise2 == 1)
+            {
+                destination = account1;
+            }
+            else if (userChoise2 == 2)
+            {
+                destination = account2;
+            }
+            else
+            {
+                Console.WriteLine("Invalid account.");
+            }
+
+            Console.WriteLine("Enter amount: ");
+            double amount = double.Parse(Console.ReadLine());
+
+            if (source == destination)
+            {
+                Console.WriteLine("source and destination cannot be the same account.");
+                return;
+            }
+            else if (source.Balance >= amount)
+            {
+                source.Withdraw(amount);
+                destination.Deposite(amount);
+
+                source.CheckBalance();
+                destination.CheckBalance();
+            }
+            else
+            {
+                Console.WriteLine("Not enough balance.");
+
+                source.CheckBalance();
+                destination.CheckBalance();
+            }
+
+        }
+
+
+
+        // Case 10: Update Student Grade (Validated)
+
+        static void UpdateStudentGrade()
+        {
+            Student userStudent = ChooseStudent();
+
+            Console.WriteLine("Enter a new grade: ");
+            int grade = int.Parse(Console.ReadLine());
+
+            if (grade >= 0 && grade <= 100)
+            {
+                userStudent.Grade = grade;
+                Console.WriteLine("Grade has been changed!");
+            }
+            else
+            {
+                Console.WriteLine("Invalid grade.");
+                Console.WriteLine("No change made.");
+            }
+        }
+
+
+
+        // Case 11: Student Report Card
+
+        static void StudentReportCard()
+        {
+            Student studentReport = ChooseStudent();
+
+            Console.WriteLine("Student report card of " + studentReport);
+            Console.WriteLine(studentReport.Name);
+            Console.WriteLine(studentReport.Address);
+            Console.WriteLine(studentReport.Grade);
+
+            if (studentReport.Grade >= 60)
+            {
+                Console.WriteLine(studentReport + " Pass.");
+            }
+            else
+            {
+                Console.WriteLine(studentReport + " Fail");
+            }
+        }
+
+
+
+        // Case 12: Account Health Status
+
+        static void AccountHealthStatus()
+        {
+            BankAccount bankStatus = ChooseAccount();
+
+            if (bankStatus.Balance < 50)
+            {
+                Console.WriteLine("Low Balance.");
+            }
+            else if (bankStatus.Balance >= 50 && bankStatus.Balance <= 1000)
+            {
+                Console.WriteLine("Healthy Balance.");
+            }
+            else if (bankStatus.Balance > 1000)
+            {
+                Console.WriteLine("Premium Balance.");
+            }
+        }
+
+
+
+        // Case 13: Bulk Sale With Revenue Calculation
+
+        static void BulkSale()
+        {
+            Product userProduct = ChooseProduct();
+
+            Console.WriteLine("Enter quantity to sale: ");
+            int quantity = int.Parse(Console.ReadLine());
+
+            if (userProduct.StockQuantity >= quantity)
+            {
+                userProduct.Sell(quantity);
+                double revenue = userProduct.Price * quantity;
+
+                Console.WriteLine("Revenue is: " + revenue);
+            }
+            else
+            {
+                Console.WriteLine("Not enough stock.");
+                int missingQuantity = quantity - userProduct.StockQuantity;
+                Console.WriteLine("Missing quantities: " + missingQuantity);
+            }
+        }
+
+
+
+
 
 
 
