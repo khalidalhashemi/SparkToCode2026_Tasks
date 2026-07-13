@@ -89,6 +89,8 @@ namespace OppPart1Task
         public void Register(string email)
         {
 
+            Email = email;
+
             Console.WriteLine("Your registration done successfully! Your info: ");
             Console.WriteLine(Name);
             Console.WriteLine(Grade);
@@ -285,9 +287,9 @@ namespace OppPart1Task
             Console.WriteLine("Enter deposite amount: ");
             double amount = double.Parse(Console.ReadLine());
 
-            ChooseAccount().Deposite(amount);
+            chooseAccount.Deposite(amount);
 
-            ChooseAccount().CheckBalance();
+            chooseAccount.CheckBalance();
         }
 
 
@@ -301,9 +303,9 @@ namespace OppPart1Task
             Console.WriteLine("Enter withdraw amount: ");
             double amount = double.Parse(Console.ReadLine());
 
-            ChooseAccount().Withdraw(amount);
+            chooseAccount.Withdraw(amount);
 
-            ChooseAccount().CheckBalance();
+            chooseAccount.CheckBalance();
         }
 
 
@@ -314,8 +316,76 @@ namespace OppPart1Task
         {
             Product chooseProduct = ChooseProduct();
 
-            ChooseProduct().GetInventoryValue();
+            chooseProduct.GetInventoryValue();
         }
+
+
+
+        // Case 6: Register a Student
+
+        static void RegisterStudent()
+        {
+            Student chooseStudent = ChooseStudent();
+
+            Console.WriteLine("Enter your email: ");
+            string userEmail = Console.ReadLine();
+
+            chooseStudent.Register(userEmail);
+
+            Console.WriteLine("Registration Compeleted!");
+        }
+
+
+
+        // Case 7: Compare Two Account Balances
+
+        static void CompareTwoAccountBalance()
+        {
+            double readAccount1 = account1.Balance;
+            double readAccount2 = account2.Balance;
+
+            if (readAccount1 ==  readAccount2)
+            {
+                Console.WriteLine("Both accounts hold the same amount of money.");
+            }
+            else if (readAccount1 > readAccount2)
+            {
+                Console.WriteLine(account1 + " Holds more amount fo money.");
+            }
+            else
+            {
+                Console.WriteLine(account2 + " Holds more amount fo money.");
+            }
+        }
+
+
+
+        // Case 8: Restock Product & Stock Level Check
+
+        static void RestockProductAndStockLevel()
+        {
+            Product chooseProduct = ChooseProduct();
+
+            Console.WriteLine("Enter additional quantity: ");
+            int quantity = int.Parse(Console.ReadLine());
+
+            chooseProduct.Restock(quantity);
+
+            if (chooseProduct.StockQuantity < 10)
+            {
+                Console.WriteLine("Stock level is Low.");
+            }
+            else if (chooseProduct.StockQuantity >= 10 && chooseProduct.StockQuantity <= 49)
+            {
+                Console.WriteLine("Stock level is Moderate.");
+            }
+            else
+            {
+                Console.WriteLine("Stock level is Well");
+            }
+        }
+
+
 
 
     }
