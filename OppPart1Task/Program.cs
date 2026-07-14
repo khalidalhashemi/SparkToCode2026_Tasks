@@ -7,12 +7,39 @@ namespace OppPart1Task
 
     public class BankAccount
     {
+        private bool isOverDraw;
+
+        public bool isOverDrawn
+        {
+            get
+            {
+                return (Balance < 0);
+            }
+        }
+
         // Properties
         public int AccountNumber { get; set; }
 
         public string HolderName { get; set; }
 
         public double Balance { get; set; }
+
+
+
+
+
+        public BankAccount()
+        {
+
+        }
+        public BankAccount(int  accountNumber, string holderName, double balance)
+        {
+            AccountNumber = accountNumber;
+            HolderName = holderName;
+            Balance = balance;
+        }
+
+
 
 
         // Methods
@@ -29,7 +56,7 @@ namespace OppPart1Task
         public void Withdraw(double amount)
         {
 
-            if (Balance <= 0)
+            if (Balance < amount)
             {
                 Console.WriteLine("You don't have enough amount.");
             }
@@ -53,7 +80,6 @@ namespace OppPart1Task
 
         private void PrintInformation()
         {
-
             Console.WriteLine(HolderName);
             Console.WriteLine(Balance);
 
@@ -74,6 +100,36 @@ namespace OppPart1Task
 
     public class Student
     {
+        private int SecurityPIN;
+
+        public int securityPIN
+        {
+            set
+            {
+                if (value >= 1000 && value <= 9999)
+                {
+                    SecurityPIN = value;
+                }
+                else
+                {
+                    Console.WriteLine("PIN must contains 4 digits only. Please try again.");
+                }
+            }
+        }
+
+
+        private static int StudentCount;
+
+        public Student()
+        {
+            StudentCount++;
+        }
+
+        public static int GetStudentCount()
+        {
+            return StudentCount;
+        }
+
         // Properties
         public int Grade { get; set; }
 
@@ -197,10 +253,83 @@ namespace OppPart1Task
 
         static void Main(string[] args)
         {
-            
+
+            bool exitApp = false;
+
+            while (exitApp == false)
+            {
+                Console.WriteLine("\n===== OOP Part 1 - Bank / Student / Product Manager =====");
+                Console.WriteLine(" 1. View Account Details");
+                Console.WriteLine(" 2. Update Student Address");
+                Console.WriteLine(" 3. Make a Deposit");
+                Console.WriteLine(" 4. Make a Withdrawal");
+                Console.WriteLine(" 5. View Product Details");
+                Console.WriteLine(" 6. Register a Student");
+                Console.WriteLine(" 7. Compare Two Account Balances");
+                Console.WriteLine(" 8. Restock Product & Stock Level Check");
+                Console.WriteLine(" 9. Transfer Between Accounts");
+                Console.WriteLine("10. Update Student Grade (Validated)");
+                Console.WriteLine("11. Student Report Card");
+                Console.WriteLine("12. Account Health Status");
+                Console.WriteLine("13. Bulk Sale With Revenue Calculation");
+                Console.WriteLine("14. Scholarship Eligibility Check");
+                Console.WriteLine("15. Full Balance Top-Up Flow");
+                Console.WriteLine("16. Quick Account Opening (Parameterized Constructor)");
+                Console.WriteLine("17. Total Students Counter (Static Field & Method)");
+                Console.WriteLine("18. Overdrawn Account Check (Read-Only Property)");
+                Console.WriteLine("19. Set Student Security PIN (Write-Only Property)");
+                Console.WriteLine("20. Exit");
+                Console.Write("Choose an option: ");
+
+                int choice;
+                try
+                {
+                    choice = int.Parse(Console.ReadLine());
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Invalid input. Please enter a number from 1 to 20.");
+                    continue;
+                }
+
+                switch (choice)
+                {
+                    case 1: ViewAccountDetails(); break;
+                    case 2: UpdateStudentAddress(); break;
+                    case 3: MakeDeposite(); break;
+                    case 4: MakeWithdraw(); break;
+                    case 5: ViewProductDetails(); break;
+                    case 6: RegisterStudent(); break;
+                    case 7: CompareTwoAccountBalance(); break;
+                    case 8: RestockProductAndStockLevel(); break;
+                    case 9: TransferBetweenAccounts(); break;
+                    case 10: UpdateStudentGrade(); break;
+                    case 11: StudentReportCard(); break;
+                    case 12: AccountHealthStatus(); break;
+                    case 13: BulkSaleWithRevenueCalculation(); break;
+                    case 14: ScholarshipEligibilityCheck(); break;
+                    case 15: FullBalanceTopUpFlow(); break;
+                    case 16: NewBankAccount(); break;
+                    case 17: TotalStudent(); break;
+                    case 18: CheckOverDrawn(); break;
+                    case 19: CreateSecurityPIN(); break;
+                    case 20:
+                        exitApp = true;
+                        Console.WriteLine("Goodbye!");
+                        break;
+                    default:
+                        Console.WriteLine("Invalid option, please choose between 1 and 20.");
+                        break;
+                }
+                Console.WriteLine("Press any key");
+                Console.ReadKey();
+                Console.Clear();
+
+            }
+
         }
 
-        // Choose an Account, Student and Producr 
+        // Choose an Account, Student and Producr //
 
         static BankAccount ChooseAccount()
         {
@@ -343,20 +472,18 @@ namespace OppPart1Task
 
         static void CompareTwoAccountBalance()
         {
-            double readAccount1 = account1.Balance;
-            double readAccount2 = account2.Balance;
 
-            if (readAccount1 ==  readAccount2)
+            if (account1.Balance ==  account2.Balance)
             {
                 Console.WriteLine("Both accounts hold the same amount of money.");
             }
-            else if (readAccount1 > readAccount2)
+            else if (account1.Balance > account2.Balance)
             {
-                Console.WriteLine(account1 + " Holds more amount fo money.");
+                Console.WriteLine(account1.HolderName + " Holds more amount fo money.");
             }
             else
             {
-                Console.WriteLine(account2 + " Holds more amount fo money.");
+                Console.WriteLine(account2.HolderName + " Holds more amount fo money.");
             }
         }
 
@@ -493,11 +620,11 @@ namespace OppPart1Task
 
             if (studentReport.Grade >= 60)
             {
-                Console.WriteLine(studentReport + " Pass.");
+                Console.WriteLine(studentReport.Name + " Pass.");
             }
             else
             {
-                Console.WriteLine(studentReport + " Fail");
+                Console.WriteLine(studentReport.Name + " Fail");
             }
         }
 
@@ -573,7 +700,8 @@ namespace OppPart1Task
                 {
                     Console.WriteLine("Grade must be 80 or above.");
                 }
-                else if (userAccount.Balance < 100)
+                
+                if (userAccount.Balance < 100)
                 {
                     Console.WriteLine("Balance must be 100 or above.");
                 }
@@ -606,6 +734,77 @@ namespace OppPart1Task
             }
         }
 
+
+
+        // Case 16: Quick Account Opening [Parameterized Constructor]
+
+        static void NewBankAccount()
+        {
+            Console.WriteLine("Enter your name: ");
+            string userName = Console.ReadLine();
+
+            Console.WriteLine("Enter your account Number: ");
+            int userAccountNumber = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Make your fitrt deposit: ");
+            double balance = double.Parse(Console.ReadLine());
+
+            BankAccount newAccount = new BankAccount (userAccountNumber, userName, balance);
+
+            Console.WriteLine("Your details: ");
+            Console.WriteLine("Holder name: " + userName);
+            Console.WriteLine("Account number: " + userAccountNumber);
+            Console.WriteLine("Balance: " + balance);
+        }
+
+
+
+        // Case 17: Total Students Counter [Static Fields & Methods]
+
+        static void TotalStudent()
+        {
+            Console.WriteLine("Total number of student is: " + Student.GetStudentCount());
+        }
+
+
+
+        // Case 18: Overdrawn Account Check [Read-Only Property]
+
+        static void CheckOverDrawn()
+        {
+            BankAccount userAccount = ChooseAccount();
+
+            if (userAccount.isOverDrawn)
+            {
+                Console.WriteLine("This account is overdrawn.");
+            }
+            else
+            {
+                Console.WriteLine("This account is not overdrawn.");
+            }
+        }
+
+
+
+        // Case 19: Set Student Security PIN [Write-Only Property]
+
+        static void CreateSecurityPIN()
+        {
+            Student userStudent = ChooseStudent();
+
+            Console.WriteLine("Enter your security PIN: ");
+            int PIN = int.Parse(Console.ReadLine());
+
+            if (PIN >= 1000 && PIN <= 9999)
+            {
+                userStudent.securityPIN = PIN;
+                Console.WriteLine("PIN has been set successfully!");
+            }
+            else
+            {
+                Console.WriteLine("PIN not created. please try again.");
+            }
+        }
 
 
 
