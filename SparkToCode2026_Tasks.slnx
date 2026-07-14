@@ -3,6 +3,7 @@
   <Project Path="FundamentalTask1Solution/FundamentalTask1Solution.csproj" />
   <Project Path="LoopErrorHandlingSolutions/LoopErrorHandlingSolutions.csproj" Id="4466862c-5cce-4c81-86ca-233780630ba0" />
   <Project Path="MiniCompoundProject/MiniCompoundProject.csproj" Id="b2457cd7-7871-41d2-957e-cacaa6678157" />
+  <Project Path="OppPart1Task/OppPart1Task.csproj" Id="f01c95e2-3b19-4c3a-aedb-c6687c3810b6" />
   <Project Path="SolutionTask5Collections/SolutionTask5Collections.csproj" Id="fbb3b307-d8ac-441c-ba98-d842089527d5" />
   <Project Path="Task3Buil-inFunctions/Task3Buil-inFunctions.csproj" Id="b634ad18-8ab9-4f0c-97db-dc334a0c9d65" />
 </Solution>
