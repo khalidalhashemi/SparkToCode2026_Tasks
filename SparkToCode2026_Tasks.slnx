@@ -1,4 +1,7 @@
 <Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="DatabaseTasks/Airline Information System.drawio.png" />
+  </Folder>
   <Project Path="CsharpSession4Task/CsharpSession4Task.csproj" Id="daae3b70-f72d-4b12-a4a1-0fc02305c2dd" />
   <Project Path="FundamentalTask1Solution/FundamentalTask1Solution.csproj" />
   <Project Path="LoopErrorHandlingSolutions/LoopErrorHandlingSolutions.csproj" Id="4466862c-5cce-4c81-86ca-233780630ba0" />
