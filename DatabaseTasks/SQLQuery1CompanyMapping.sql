@@ -100,3 +100,40 @@ truncate table EmployeeDependent
 drop table EmployeeDependent
 
 drop database TrainingCompany
+
+----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+
+-- 2. DML
+
+use TrainingCompany
+
+insert into Employees(Fname, Lname, Bdate, Gender, Salary)
+values('Mohammed', 'Ali', '11-12-2000',1,2300)
+
+insert into Employees(Fname, Lname, Bdate, Gender, Salary)
+values('Ahmed', 'Ali', '11-12-2007',1,500)
+
+-- row constructor
+insert into Employees(Fname, Lname, Bdate, Gender, Salary)
+values('Said', 'Ahmed', '12-12-2001',1,600),
+      ('Karim', 'Salah', '11-10-2001',1,2300),
+	  ('Ghada', 'Ahmed', '12-12-2001',0,750)
+
+
+-- update
+update Employees
+set Salary += 25
+
+update Employees
+set Salary += 50
+where Ssn = 6
+
+update Employees
+set EmployeeAddress = 'Muscat', Salary = 2000
+where Ssn = 6
+
+delet from Employees
+where Ssn = 6
+
+truncate table Employees
