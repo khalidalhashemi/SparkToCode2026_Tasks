@@ -122,14 +122,14 @@ values('Said', 'Ahmed', '12-12-2001',1,600),
 
 
 -- update
-update Employees
+update Employee
 set Salary += 25
 
-update Employees
+update Employee
 set Salary += 50
 where Ssn = 6
 
-update Employees
+update Employee
 set EmployeeAddress = 'Muscat', Salary = 2000
 where Ssn = 6
 
@@ -137,3 +137,25 @@ delet from Employees
 where Ssn = 6
 
 truncate table Employees
+
+
+----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+
+-- 2. DQL
+
+use ITI
+
+-- select
+
+select *
+from Employee
+
+select * from Employee
+where FirstName = 'Mohammed'
+
+select from Employee
+where Gender = 'male';
+
+select from Employee
+where Salary between 350 and 1000
