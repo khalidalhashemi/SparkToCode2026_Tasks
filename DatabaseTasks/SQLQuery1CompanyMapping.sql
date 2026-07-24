@@ -72,3 +72,31 @@ create table EmployeeDependent
 	foreign key (Essn) references Employee(Ssn),
 	primary key (Essn, Dependent_name),
 )
+
+ALTER TABLE Employee
+	ADD Dno int foreign key references Department(Dnumber)
+
+ALTER TABLE Employee
+ALTER COLUMN Mname nvarchar(10)
+
+EXEC sp_rename 'Employee.Mname', 'Midname', 'COLUMN';
+
+ALTER TABLE Employee
+ALTER COLUMN Midname;
+
+ALTER TABLE Employee
+ADD CONSTRAINT UQ_Employee_Mname UNIQUE (Fname);
+
+ALTER TABLE Employee
+DROP CONSTRAINT CK_Employee_Salary;
+
+ALTER TABLE Employee
+ADD CONSTRAINT CK_Employee_Salary check(Salary between 350 and 3500)
+
+EXEC sp_rename 'Employee', 'Employees';
+
+truncate table EmployeeDependent
+
+drop table EmployeeDependent
+
+drop database TrainingCompany
