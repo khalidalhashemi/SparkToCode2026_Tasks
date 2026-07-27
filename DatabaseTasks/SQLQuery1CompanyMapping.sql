@@ -77,12 +77,12 @@ ALTER TABLE Employee
 	ADD Dno int foreign key references Department(Dnumber)
 
 ALTER TABLE Employee
-ALTER COLUMN Mname nvarchar(10)
+ALTER COLUMN Midname nvarchar(10)
 
 EXEC sp_rename 'Employee.Mname', 'Midname', 'COLUMN';
 
 ALTER TABLE Employee
-ALTER COLUMN Midname;
+ALTER COLUMN Midname nvarchar(10);
 
 ALTER TABLE Employee
 ADD CONSTRAINT UQ_Employee_Mname UNIQUE (Fname);
@@ -108,14 +108,14 @@ drop database TrainingCompany
 
 use TrainingCompany
 
-insert into Employees(Fname, Lname, Bdate, Gender, Salary)
+insert into Employee(FirstName, LastName, Bdate, Gender, Salary)
 values('Mohammed', 'Ali', '11-12-2000',1,2300)
 
-insert into Employees(Fname, Lname, Bdate, Gender, Salary)
+insert into Employee(FirstName, LastName, Bdate, Gender, Salary)
 values('Ahmed', 'Ali', '11-12-2007',1,500)
 
 -- row constructor
-insert into Employees(Fname, Lname, Bdate, Gender, Salary)
+insert into Employee(FirstName, LastName, Bdate, Gender, Salary)
 values('Said', 'Ahmed', '12-12-2001',1,600),
       ('Karim', 'Salah', '11-10-2001',1,2300),
 	  ('Ghada', 'Ahmed', '12-12-2001',0,750)
@@ -133,7 +133,7 @@ update Employee
 set EmployeeAddress = 'Muscat', Salary = 2000
 where Ssn = 6
 
-delet from Employees
+delete from Employee
 where Ssn = 6
 
 truncate table Employees
@@ -144,7 +144,7 @@ truncate table Employees
 
 -- 2. DQL
 
-use ITI
+use TrainingCompany
 
 -- select
 
@@ -154,8 +154,8 @@ from Employee
 select * from Employee
 where FirstName = 'Mohammed'
 
-select from Employee
+select * from Employee
 where Gender = 'male';
 
-select from Employee
+select * from Employee
 where Salary between 350 and 1000
