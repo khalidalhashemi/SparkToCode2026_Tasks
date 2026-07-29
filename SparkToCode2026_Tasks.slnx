@@ -20,6 +20,9 @@
   <Project Path="CsharpSession4Task/CsharpSession4Task.csproj" Id="daae3b70-f72d-4b12-a4a1-0fc02305c2dd">
     <BuildType Solution="Default|*" Project="Release" />
   </Project>
+  <Project Path="E-CommerceTask/E-CommerceTask.csproj" Id="af5e20d9-cd74-460c-8fcc-e186f1d000fc">
+    <BuildType Solution="Default|*" Project="Release" />
+  </Project>
   <Project Path="EFCoreProject/EFCoreProject.csproj" Id="46bc771b-b6d2-4711-868c-cb004aa6430d">
     <BuildType Solution="Default|*" Project="Release" />
   </Project>
