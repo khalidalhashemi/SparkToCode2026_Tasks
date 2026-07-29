@@ -4,9 +4,10 @@ using System.Text;
 
 namespace E_CommerceTask.Models
 {
-    public class Order
+    public class OrderProduct
     {
+        public int productionID { get; set; }
         public int orderID { get; set; }
-        public string orderDate { get; set; }
+        public int quantity { get; set; }
     }
 }
