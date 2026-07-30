@@ -158,13 +158,11 @@ namespace E_CommerceTask
                     Console.WriteLine("Category does not exists.");
                     return;
                 }
-                else
-                {
+
                     context.products.Add(newProduct);
                     context.SaveChanges();
 
                     Console.WriteLine("Product added.");
-                }
             }
 
 
