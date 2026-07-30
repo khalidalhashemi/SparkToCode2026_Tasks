@@ -10,7 +10,7 @@ namespace E_CommerceTask.Models
     {
         [Key]
         public int reviewID { get; set; }
-        public string rating { get; set; }
+        public int rating { get; set; }
         public string comments { get; set; }
 
 

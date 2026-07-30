@@ -9,6 +9,7 @@ namespace E_CommerceTask.Models
     {
         [Key]
         public int categoryID { get; set; }
+        public string categName { get; set; }
         public int productID { get; set; }
 
 

@@ -10,7 +10,7 @@ namespace E_CommerceTask.Models
     {
         [Key]
         public int orderID { get; set; }
-        public string orderDate { get; set; }
+        public DateTime orderDate { get; set; }
 
 
         // Place Relationships 1 - M

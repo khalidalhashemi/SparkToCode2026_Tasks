@@ -6,15 +6,15 @@ using System.Text;
 
 namespace E_CommerceTask
 {
-    public class ProjectContext : DbContext
+    public class AppDBContext : DbContext
     {
         // Register model
-        DbSet<User> users { get; set; }
-        DbSet<Product> products { get; set; }
-        DbSet<Category> categories { get; set; }
-        DbSet<Review> reviews { get; set; }
-        DbSet<Order> orders { get; set; }
-        DbSet<OrderProduct> orderProducts { get; set; }
+        public DbSet<User> users { get; set; }
+        public DbSet<Product> products { get; set; }
+        public DbSet<Category> categories { get; set; }
+        public DbSet<Review> reviews { get; set; }
+        public DbSet<Order> orders { get; set; }
+        public DbSet<OrderProduct> orderProducts { get; set; }
 
 
 
